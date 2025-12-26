@@ -14,12 +14,22 @@ export default function Footer() {
     
     setStatus('loading');
     
-    // Simulate API call - replace with actual service (Mailchimp, ConvertKit, etc.)
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // For now, just show success (in production, connect to email service)
-    setStatus('success');
-    setEmail('');
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
