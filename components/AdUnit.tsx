@@ -41,11 +41,15 @@ export default function AdUnit({ slot, format = 'auto', style, className }: AdUn
   }
 
   return (
-    <div className={className} style={{ 
-      textAlign: 'center', 
+    <div className={className} style={{
+      textAlign: 'center',
       margin: '2rem 0',
       minHeight: '100px',
-      ...style 
+      minWidth: '300px',
+      width: '100%',
+      maxWidth: '100%',
+      overflow: 'hidden',
+      ...style
     }}>
       <Script
         async
@@ -55,7 +59,11 @@ export default function AdUnit({ slot, format = 'auto', style, className }: AdUn
       />
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
+        style={{
+          display: 'block',
+          minWidth: '300px',
+          minHeight: '100px',
+        }}
         data-ad-client={ADSENSE_CLIENT}
         data-ad-slot={slot}
         data-ad-format={format}
