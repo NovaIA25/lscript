@@ -118,7 +118,7 @@ export default function GuidePage() {
                   transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     height: '100%',
-                    background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))',
+                    background: 'var(--color-primary)',
                     borderRadius: 'var(--radius-full)',
                   }}
                 />
@@ -131,9 +131,10 @@ export default function GuidePage() {
                   transition={{ delay: 1 }}
                   style={{
                     marginTop: 'var(--space-4)',
-                    padding: 'var(--space-3)',
-                    background: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
-                    borderRadius: 'var(--radius-md)',
+                    padding: 'var(--space-4)',
+                    background: 'rgba(234, 88, 12, 0.1)',
+                    border: '1px solid rgba(234, 88, 12, 0.2)',
+                    borderRadius: 'var(--radius-lg)',
                     textAlign: 'center',
                   }}
                 >

@@ -144,43 +144,31 @@ export default function Footer() {
 
             {/* Social Links */}
             <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-4)' }}>
-              <a 
-                href="https://twitter.com/lscript_fr" 
-                target="_blank" 
+              <a
+                href="https://github.com/NovaIA25/lscript"
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
                   justifyContent: 'center',
-                  width: '40px', 
-                  height: '40px', 
+                  width: '40px',
+                  height: '40px',
                   borderRadius: 'var(--radius-md)',
-                  background: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
+                  background: 'rgba(0, 0, 0, 0.04)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
                   color: 'var(--color-text-muted)',
-                  transition: 'all var(--duration-fast)'
+                  transition: 'all 0.2s ease'
                 }}
-                aria-label="Twitter"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-              <a 
-                href="https://github.com/NovaIA25/lscript" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  width: '40px', 
-                  height: '40px', 
-                  borderRadius: 'var(--radius-md)',
-                  background: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  color: 'var(--color-text-muted)',
-                  transition: 'all var(--duration-fast)'
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(0, 0, 0, 0.06)';
+                  e.currentTarget.style.borderColor = 'var(--color-primary)';
+                  e.currentTarget.style.color = 'var(--color-primary)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(0, 0, 0, 0.04)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                  e.currentTarget.style.color = 'var(--color-text-muted)';
                 }}
                 aria-label="GitHub"
               >
