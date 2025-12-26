@@ -1,13 +1,13 @@
 ---
-title: "Frontend vs Backend expliqué simplement"
+title: "Frontend vs Backend : quelle différence ?"
 excerpt: "Tu entends ces mots partout mais tu ne sais pas ce que ça veut dire ? On t'explique."
 category: backend
 date: "2024-12-26"
 ---
 
-# Frontend vs Backend expliqué simplement
+# Frontend vs Backend : quelle différence ?
 
-Quand on parle de développement web, on entend souvent "frontend" et "backend". Mais c'est quoi la différence ?
+Quand on parle de développement web, on entend souvent "frontend" et "backend". Mais c'est quoi exactement, et quelle est la différence ?
 
 ## Frontend = ce que tu vois
 
