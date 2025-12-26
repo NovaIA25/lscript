@@ -2889,3 +2889,203 @@ img {
     width: 100% !important;
   }
 }
+
+/* ========================================
+   MOBILE PREMIUM — Comprehensive Responsive
+   ======================================== */
+
+@media (max-width: 640px) {
+  /* Callouts: more compact on mobile */
+  .callout {
+    padding: var(--space-4) !important;
+    margin: var(--space-6) 0 !important;
+    gap: var(--space-3) !important;
+  }
+
+  .callout-title {
+    font-size: 0.65rem !important;
+    padding: 4px 10px !important;
+  }
+
+  .callout-content p,
+  .callout-content li {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Chapter navigation: stack vertically */
+  .chapter-nav-buttons {
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+  }
+
+  .chapter-nav-btn {
+    max-width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .chapter-nav-prev,
+  .chapter-nav-next {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .chapter-progress-bar {
+    max-width: 150px !important;
+  }
+
+  /* Article content: tighter spacing */
+  .article-content {
+    font-size: var(--text-base) !important;
+  }
+
+  .article-content h2 {
+    font-size: var(--text-xl) !important;
+    margin-top: var(--space-10) !important;
+    padding-top: var(--space-6) !important;
+  }
+
+  .article-content h3 {
+    font-size: var(--text-lg) !important;
+    margin-top: var(--space-6) !important;
+  }
+
+  .article-content p {
+    font-size: var(--text-base) !important;
+    margin-bottom: var(--space-5) !important;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: var(--space-4) !important;
+  }
+
+  .article-content li {
+    font-size: var(--text-base) !important;
+    margin-bottom: var(--space-2) !important;
+  }
+
+  /* Code blocks: smaller on mobile */
+  .article-content pre,
+  .article-content code {
+    font-size: 0.8rem !important;
+  }
+
+  .article-content pre {
+    padding: var(--space-3) !important;
+    overflow-x: auto !important;
+  }
+
+  /* Tables: scroll horizontally */
+  .article-content table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* Guide index: smaller cards */
+  .guide-chapter-card {
+    padding: var(--space-3) var(--space-4) !important;
+    gap: var(--space-3) !important;
+  }
+
+  .guide-chapter-number {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: var(--text-base) !important;
+  }
+
+  .guide-chapter-content h3 {
+    font-size: var(--text-sm) !important;
+  }
+
+  .guide-chapter-content p {
+    font-size: var(--text-xs) !important;
+  }
+
+  /* Header: mobile menu improvements */
+  .header-mobile-menu {
+    padding: var(--space-4) !important;
+  }
+
+  /* Hero section: smaller text */
+  .hero-title {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-base) !important;
+  }
+
+  /* Page content: reduce side padding */
+  .page-content {
+    padding: var(--space-6) 0 !important;
+  }
+
+  /* Cards grid: single column */
+  .cards-premium-grid,
+  .articles-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Blog filter: scrollable */
+  .blog-categories {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: var(--space-2) !important;
+    padding-bottom: var(--space-2) !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .blog-categories::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  /* Footer: stack columns */
+  footer .container > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8) !important;
+    text-align: center !important;
+  }
+
+  footer h4 {
+    margin-bottom: var(--space-3) !important;
+  }
+
+  footer ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: var(--space-2) var(--space-4) !important;
+  }
+
+  /* Bottom bar: stack */
+  footer > .container > div:last-child > div {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: var(--space-4) !important;
+  }
+}
+
+/* Extra small screens (phones in portrait) */
+@media (max-width: 380px) {
+  .callout-title {
+    font-size: 0.6rem !important;
+  }
+
+  .chapter-nav-title {
+    font-size: var(--text-xs) !important;
+  }
+
+  h1 {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .btn,
+  .btn-premium {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
