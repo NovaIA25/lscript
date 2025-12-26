@@ -1112,10 +1112,11 @@ pre code {
 .callout {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   gap: var(--space-4);
-  padding: var(--space-4) var(--space-5);
-  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-xl);
   margin: var(--space-8) 0;
   background: var(--callout-bg, rgba(16, 185, 129, 0.06));
   border: 1px solid var(--callout-border, rgba(16, 185, 129, 0.15));
@@ -1127,7 +1128,7 @@ pre code {
   border-color: var(--callout-border-hover, rgba(16, 185, 129, 0.25));
 }
 
-/* Title badge with icon */
+/* Title badge with icon - centered */
 .callout-title {
   display: inline-flex;
   align-items: center;
@@ -1141,8 +1142,6 @@ pre code {
   letter-spacing: 0.08em;
   color: var(--callout-text, #047857);
   white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .callout-title span:first-child {
@@ -1150,8 +1149,8 @@ pre code {
 }
 
 .callout-content {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
+  text-align: left;
 }
 
 .callout-content p {
