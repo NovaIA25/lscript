@@ -68,12 +68,34 @@ export default function BlogClient({ articles }: BlogClientProps) {
   }, [articles, selectedCategory, searchQuery]);
 
   return (
-    <div className="page-content">
-      <div className="container">
-        {/* Header */}
-        <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-          <h1>Tous les articles</h1>
-          <p style={{ maxWidth: '600px' }}>
+    <div className="page-content" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
+      <div className="container" style={{ maxWidth: '1200px' }}>
+        {/* Premium Header */}
+        <div style={{
+          textAlign: 'center',
+          marginBottom: 'var(--space-20)',
+          padding: '0 var(--space-6)'
+        }}>
+          <span className="article-category-badge" style={{ marginBottom: 'var(--space-8)' }}>
+            ✍️ Articles & Tutoriels
+          </span>
+          <h1 style={{
+            fontSize: 'var(--text-5xl)',
+            marginBottom: 'var(--space-8)',
+            letterSpacing: 'var(--tracking-tight)'
+          }}>
+            Tous les articles
+          </h1>
+
+          <div className="section-separator" />
+
+          <p style={{
+            fontSize: 'var(--text-xl)',
+            color: 'var(--color-text-secondary)',
+            lineHeight: '1.8',
+            maxWidth: '700px',
+            margin: '0 auto var(--space-12)'
+          }}>
             Des explications simples pour comprendre le développement web et mobile.
             Un article = une question, une réponse claire.
           </p>
@@ -81,32 +103,52 @@ export default function BlogClient({ articles }: BlogClientProps) {
 
         <BeginnerCallout />
 
-        {/* Barre de recherche */}
-        <div style={{ marginBottom: 'var(--space-6)' }}>
-          <input
-            type="text"
-            placeholder="🔍 Rechercher un article..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            style={{
-              width: '100%',
-              padding: 'var(--space-3) var(--space-4)',
-              fontSize: 'var(--text-base)',
-              border: '2px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              transition: 'border-color var(--duration-normal)',
-            }}
-            onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
-            onBlur={(e) => e.target.style.borderColor = 'var(--color-border)'}
-          />
+        {/* Premium Search Bar */}
+        <div style={{
+          marginBottom: 'var(--space-10)',
+          maxWidth: '600px',
+          margin: '0 auto var(--space-10)'
+        }}>
+          <div style={{
+            position: 'relative',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)',
+            borderRadius: 'var(--radius-xl)',
+            overflow: 'hidden'
+          }}>
+            <input
+              type="text"
+              placeholder="🔍 Rechercher un article..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                width: '100%',
+                padding: 'var(--space-4) var(--space-6)',
+                fontSize: 'var(--text-lg)',
+                border: '2px solid var(--color-border)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                background: 'var(--color-surface)',
+                outline: 'none'
+              }}
+              onFocus={(e) => {
+                e.target.style.borderColor = 'var(--color-accent)';
+                e.target.style.boxShadow = '0 0 0 4px rgba(234, 88, 12, 0.1)';
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = 'var(--color-border)';
+                e.target.style.boxShadow = 'none';
+              }}
+            />
+          </div>
         </div>
 
-        {/* Filtres par catégorie */}
+        {/* Premium Category Filters */}
         <div style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 'var(--space-2)',
-          marginBottom: 'var(--space-8)',
+          justifyContent: 'center',
+          gap: 'var(--space-3)',
+          marginBottom: 'var(--space-16)',
         }}>
           {CATEGORIES.map(category => {
             const count = categoryCounts[category.id] || 0;
@@ -120,28 +162,33 @@ export default function BlogClient({ articles }: BlogClientProps) {
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 style={{
-                  padding: 'var(--space-2) var(--space-4)',
+                  padding: 'var(--space-3) var(--space-5)',
                   fontSize: 'var(--text-sm)',
-                  fontWeight: isActive ? '600' : '500',
+                  fontWeight: isActive ? 'var(--weight-semibold)' : 'var(--weight-medium)',
                   color: isActive ? 'white' : 'var(--color-text)',
                   background: isActive
-                    ? 'var(--color-primary)'
+                    ? 'var(--color-accent)'
                     : 'var(--color-surface)',
-                  border: `2px solid ${isActive ? 'var(--color-primary)' : 'var(--color-border)'}`,
+                  border: `2px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border)'}`,
                   borderRadius: 'var(--radius-full)',
                   cursor: 'pointer',
-                  transition: 'all var(--duration-fast)',
+                  transition: 'all 0.2s ease',
+                  boxShadow: isActive
+                    ? '0 2px 8px rgba(234, 88, 12, 0.2)'
+                    : '0 1px 3px rgba(0,0,0,0.04)',
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.borderColor = 'var(--color-primary)';
+                    e.currentTarget.style.borderColor = 'var(--color-accent)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.borderColor = 'var(--color-border)';
                     e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
                   }
                 }}
               >
