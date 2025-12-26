@@ -2,6 +2,7 @@ import { getArticleBySlug, getAllArticles } from '@/lib/articles';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import NextSteps from '@/components/NextSteps';
 
 interface Props {
   params: { slug: string };
@@ -59,8 +60,13 @@ export default async function ArticlePage({ params }: Props) {
           />
         </article>
 
+        {/* Navigation guidance */}
+        <div style={{ maxWidth: '65ch', margin: '0 auto' }}>
+          <NextSteps category={article.category} currentSlug={params.slug} />
+        </div>
+
         <div style={{ 
-          marginTop: '4rem', 
+          marginTop: '2rem', 
           paddingTop: '2rem', 
           borderTop: '1px solid rgba(255,255,255,0.1)',
           textAlign: 'center'
@@ -73,3 +79,4 @@ export default async function ArticlePage({ params }: Props) {
     </div>
   );
 }
+

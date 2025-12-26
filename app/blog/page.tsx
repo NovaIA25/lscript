@@ -1,5 +1,6 @@
 import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
+import BeginnerCallout from '@/components/BeginnerCallout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,13 +14,15 @@ export default async function BlogPage() {
   return (
     <div className="page-content">
       <div className="container">
-        <div className="section-header" style={{ textAlign: 'left', marginBottom: '3rem' }}>
+        <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
           <h1>Tous les articles</h1>
           <p style={{ maxWidth: '600px' }}>
             Des explications simples pour comprendre le développement web et mobile. 
             Un article = une question, une réponse claire.
           </p>
         </div>
+
+        <BeginnerCallout />
 
         {articles.length === 0 ? (
           <div className="card" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
@@ -41,3 +44,4 @@ export default async function BlogPage() {
     </div>
   );
 }
+

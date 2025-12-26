@@ -396,32 +396,67 @@ p {
 
 /* ---------- Article Page ---------- */
 .article-header {
-  max-width: 800px;
+  max-width: 65ch;
   margin: 0 auto var(--space-2xl);
 }
 
 .article-content {
-  max-width: 800px;
+  max-width: 65ch;
   margin: 0 auto;
+  line-height: 1.75;
+  font-size: 1.0625rem;
 }
 
 .article-content h2 {
-  margin-top: var(--space-2xl);
-  margin-bottom: var(--space-md);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+  font-size: 1.5rem;
+}
+
+.article-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  font-size: 1.25rem;
 }
 
 .article-content p {
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.25rem;
+}
+
+.article-content p + p {
+  margin-top: 1.25rem;
 }
 
 .article-content ul, .article-content ol {
   padding-left: var(--space-xl);
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.25rem;
 }
 
 .article-content li {
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.75rem;
   color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.article-content li::marker {
+  color: var(--color-accent);
+}
+
+.article-content strong {
+  color: var(--color-text);
+}
+
+.article-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-content a:hover {
+  color: var(--color-accent-hover);
 }
 
 .article-content code {
@@ -437,10 +472,196 @@ p {
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   overflow-x: auto;
-  margin-bottom: var(--space-md);
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .article-content pre code {
   background: none;
   padding: 0;
 }
+
+.article-content blockquote {
+  border-left: 4px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.article-content th {
+  background: var(--color-surface);
+  font-weight: 600;
+}
+
+/* ---------- Callouts (Pedagogical) ---------- */
+.callout {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+  border-left: 4px solid;
+}
+
+.callout-tip {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: var(--color-success);
+}
+
+.callout-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--color-warning);
+}
+
+.callout-summary {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.callout-tip .callout-title { color: var(--color-success); }
+.callout-warning .callout-title { color: var(--color-warning); }
+.callout-summary .callout-title { color: #3b82f6; }
+
+/* ---------- Featured Article ---------- */
+.article-card.featured {
+  border-left: 3px solid var(--color-accent);
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.08), transparent);
+}
+
+.badge-fondamental {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
+}
+
+/* ---------- Next Steps ---------- */
+.next-steps {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.next-steps h3 {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.next-step-link {
+  display: block;
+  padding: 1rem;
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.next-step-link:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.next-step-link small {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Beginner Callout ---------- */
+.beginner-callout {
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.beginner-callout-icon {
+  font-size: 1.5rem;
+}
+
+.beginner-callout a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ---------- Visualization CTA ---------- */
+.viz-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-secondary) 100%);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: var(--radius-lg);
+  margin: 2rem 0;
+  transition: all var(--transition-normal);
+}
+
+.viz-cta:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.viz-cta-icon {
+  font-size: 2rem;
+}
+
+.viz-cta-content {
+  flex: 1;
+}
+
+.viz-cta-content strong {
+  display: block;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.viz-cta-content p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.viz-cta .btn {
+  flex-shrink: 0;
+}
+
