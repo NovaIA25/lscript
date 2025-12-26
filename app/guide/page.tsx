@@ -41,19 +41,27 @@ export default function GuidePage() {
   };
 
   return (
-    <div className="page-content">
-      <div className="container">
+    <div className="page-content" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
+      <div className="container" style={{ maxWidth: '900px' }}>
         <div className="guide-index">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            style={{ textAlign: 'center', marginBottom: '3rem' }}
+            style={{
+              textAlign: 'center',
+              marginBottom: 'var(--space-20)',
+              padding: '0 var(--space-6)'
+            }}
           >
-            <span className="guide-badge">📖 Guide complet</span>
-            <h1 className="guide-title">Le Guide du Développement</h1>
-            <p className="guide-subtitle">
+            <span className="guide-badge" style={{ marginBottom: 'var(--space-8)' }}>📖 Guide complet</span>
+            <h1 className="guide-title" style={{ marginBottom: 'var(--space-6)' }}>Le Guide du Développement</h1>
+            <p className="guide-subtitle" style={{
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: '1.8'
+            }}>
               Tout ce que tu dois savoir pour comprendre le monde du développement.
               Un guide complet, progressif, sans jargon.
             </p>
@@ -68,9 +76,9 @@ export default function GuidePage() {
               style={{
                 background: 'var(--color-surface)',
                 border: '2px solid var(--color-border)',
-                borderRadius: 'var(--radius-lg)',
-                padding: 'var(--space-6)',
-                marginBottom: 'var(--space-8)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-10)',
+                marginBottom: 'var(--space-16)',
               }}
             >
               <div style={{
@@ -152,11 +160,12 @@ export default function GuidePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="guide-callout"
+            style={{ marginBottom: 'var(--space-16)' }}
           >
             <div className="guide-callout-icon">💡</div>
             <div className="guide-callout-content">
               <strong>Comment lire ce guide ?</strong>
-              <p>
+              <p style={{ lineHeight: '1.7' }}>
                 Lis les chapitres dans l'ordre. Chaque concept s'appuie sur le précédent.
                 Prends ton temps — il n'y a pas de rush. Ta progression est sauvegardée automatiquement.
               </p>
@@ -231,7 +240,7 @@ export default function GuidePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            style={{ textAlign: 'center', marginTop: '3rem' }}
+            style={{ textAlign: 'center', marginTop: 'var(--space-20)' }}
           >
             <Link href="/guide/introduction" className="btn btn-primary btn-large">
               {isClient && readChapters.length > 0 ? 'Continuer le guide' : 'Commencer le guide'} →

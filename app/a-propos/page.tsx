@@ -8,42 +8,42 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="page-content article-page-premium">
-      <div className="container">
+    <div className="page-content article-page-premium" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
+      <div className="container" style={{ maxWidth: '800px' }}>
         {/* Header */}
-        <header className="article-header">
-          <h1>À propos de Lscript</h1>
-          <p className="article-meta">
+        <header className="article-header" style={{ marginBottom: 'var(--space-16)' }}>
+          <h1 style={{ marginBottom: 'var(--space-6)' }}>À propos de Lscript</h1>
+          <p className="article-meta" style={{ fontSize: 'var(--text-xl)', lineHeight: '1.6' }}>
             Apprendre le développement, simplement.
           </p>
         </header>
 
         {/* Content */}
-        <div className="article-content">
-          <h2>Notre mission</h2>
-          <p>
+        <div className="article-content" style={{ lineHeight: '1.8' }}>
+          <h2 style={{ marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>Notre mission</h2>
+          <p style={{ marginBottom: 'var(--space-6)' }}>
             <strong>Rendre le développement accessible à tous</strong>, sans jargon technique,
             sans prérequis, et 100% gratuitement.
           </p>
 
-          <p>
+          <p style={{ marginBottom: 'var(--space-6)' }}>
             Quand on veut apprendre à coder, on se retrouve vite perdu.
             Trop de ressources. Trop de jargon. Trop de formations qui supposent
             qu'on sait déjà des choses qu'on ne sait pas.
           </p>
 
-          <p>
+          <p style={{ marginBottom: 'var(--space-12)' }}>
             <strong>Lscript</strong> est né de cette frustration. L'idée est simple :
             expliquer le développement avec des mots que tout le monde peut comprendre.
           </p>
 
-          <h2>Notre approche</h2>
-          <p>
+          <h2 style={{ marginTop: 'var(--space-16)', marginBottom: 'var(--space-6)' }}>Notre approche</h2>
+          <p style={{ marginBottom: 'var(--space-10)' }}>
             Chaque article répond à <strong>une seule question</strong>. Pas plus.
             L'objectif n'est pas d'être exhaustif, mais d'être clair.
           </p>
 
-          <div className="cards-premium-grid" style={{ margin: 'var(--space-10) 0' }}>
+          <div className="cards-premium-grid" style={{ margin: 'var(--space-12) 0 var(--space-16)' }}>
             <div className="card-premium">
               <h3>Mots simples</h3>
               <p>Pas de jargon inutile. Des explications accessibles à tous.</p>
@@ -58,20 +58,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <h2>Pour qui ?</h2>
-          <p>Ce site est fait pour toi si tu es :</p>
-          <ul>
-            <li>Débutant complet — tu n'as jamais codé</li>
-            <li>En reconversion — tu veux changer de métier</li>
+          <h2 style={{ marginTop: 'var(--space-16)', marginBottom: 'var(--space-6)' }}>Pour qui ?</h2>
+          <p style={{ marginBottom: 'var(--space-6)' }}>Ce site est fait pour toi si tu es :</p>
+          <ul style={{ marginBottom: 'var(--space-12)' }}>
+            <li style={{ marginBottom: 'var(--space-3)' }}>Débutant complet — tu n'as jamais codé</li>
+            <li style={{ marginBottom: 'var(--space-3)' }}>En reconversion — tu veux changer de métier</li>
             <li>Curieux — tu veux juste comprendre comment ça marche</li>
           </ul>
 
-          <h2>Qui est derrière Lscript ?</h2>
-          <p>
+          <h2 style={{ marginTop: 'var(--space-16)', marginBottom: 'var(--space-6)' }}>Qui est derrière Lscript ?</h2>
+          <p style={{ marginBottom: 'var(--space-6)' }}>
             Lscript est un projet indépendant, créé par un développeur passionné
             qui a lui-même appris de façon autodidacte.
           </p>
-          <p>
+          <p style={{ marginBottom: 'var(--space-6)' }}>
             Le code source est disponible sur{' '}
             <a
               href="https://github.com/NovaIA25/lscript"
@@ -82,14 +82,14 @@ export default function AboutPage() {
             </a>.
           </p>
 
-          <p>
+          <p style={{ marginBottom: 'var(--space-12)' }}>
             Une question ? Une suggestion ?{' '}
             <Link href="/contact">Contacte-moi</Link>.
           </p>
         </div>
 
         {/* CTA */}
-        <div className="article-footer">
+        <div className="article-footer" style={{ marginTop: 'var(--space-16)' }}>
           <Link href="/blog" className="btn-premium">
             Voir tous les articles
           </Link>

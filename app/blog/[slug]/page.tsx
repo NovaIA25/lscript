@@ -38,17 +38,18 @@ export default async function ArticlePage({ params }: Props) {
   });
 
   return (
-    <div className="page-content article-page-premium">
-      <div className="container">
+    <div className="page-content article-page-premium" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
+      <div className="container" style={{ maxWidth: '800px' }}>
         <article>
-          <header className="article-header">
+          <header className="article-header" style={{ marginBottom: 'var(--space-16)' }}>
             <Link
               href={`/categories/${article.category}`}
               className="article-category-badge"
+              style={{ marginBottom: 'var(--space-8)' }}
             >
               {article.category}
             </Link>
-            <h1>{article.title}</h1>
+            <h1 style={{ marginBottom: 'var(--space-6)' }}>{article.title}</h1>
             <p className="article-meta">
               {formattedDate}
             </p>
@@ -65,11 +66,11 @@ export default async function ArticlePage({ params }: Props) {
         </article>
 
         {/* Navigation guidance */}
-        <div style={{ maxWidth: '65ch', margin: '0 auto var(--space-16)' }}>
+        <div style={{ maxWidth: '65ch', margin: 'var(--space-20) auto var(--space-16)' }}>
           <NextSteps category={article.category} currentSlug={params.slug} />
         </div>
 
-        <div className="article-footer">
+        <div className="article-footer" style={{ marginTop: 'var(--space-12)' }}>
           <Link href="/blog" className="btn-premium">
             Voir tous les articles
           </Link>
