@@ -112,6 +112,7 @@ export default function WebVisualization() {
 
         {/* Visualization Area */}
         <div 
+          className="viz-area"
           style={{
             background: 'linear-gradient(180deg, var(--color-surface) 0%, var(--color-secondary) 100%)',
             borderRadius: 'var(--radius-lg)',
@@ -439,7 +440,7 @@ export default function WebVisualization() {
         </div>
 
         {/* Controls */}
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div className="viz-controls" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
           <button 
             className="btn btn-secondary"
             onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}

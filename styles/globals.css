@@ -3202,3 +3202,118 @@ img {
     text-align: center !important;
   }
 }
+
+/* ========================================
+   VISUALIZATIONS PAGE — Mobile Responsive
+   ======================================== */
+
+/* Visualization area base */
+.viz-area {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.viz-main-layout {
+  gap: 1rem;
+}
+
+/* Controls alignment */
+.viz-controls {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  /* Visualization area: reduce padding */
+  .viz-area {
+    padding: 1.5rem 1rem !important;
+    min-height: 280px !important;
+  }
+
+  /* Main layout: stack vertically */
+  .viz-main-layout {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  /* Frontend/Backend sides: full width */
+  .viz-main-layout > div {
+    padding: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* Browser/Server boxes: smaller */
+  .viz-main-layout [style*="width: '180px'"],
+  .viz-main-layout [style*="width: '140px'"] {
+    width: 120px !important;
+    height: 100px !important;
+  }
+
+  /* Connection area in middle */
+  .viz-main-layout [style*="flex: 0.8"] {
+    width: 100% !important;
+    flex: none !important;
+    padding: 1rem 0 !important;
+  }
+
+  /* Controls: stack vertically */
+  .viz-controls {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .viz-controls .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  /* Step indicators row: keep horizontal */
+  .viz-controls > div[style*="gap: '0.5rem'"] {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Play button: smaller */
+  .viz-controls button[style*="borderRadius: '50%'"] {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* Hide keyboard hints on mobile */
+  .viz-controls + p[style*="fontSize: '0.8rem'"] {
+    display: none !important;
+  }
+
+  /* Ensure no horizontal overflow */
+  .page-content,
+  .container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Title smaller on mobile */
+  .page-content h1[style*="marginBottom: '0.5rem'"] {
+    font-size: 1.5rem !important;
+  }
+
+  /* Tech badges smaller */
+  .viz-main-layout span[style*="padding: '4px 8px'"] {
+    padding: 3px 6px !important;
+    font-size: 0.6rem !important;
+  }
+}
+
+/* Hero features grid on index page */
+@media (max-width: 640px) {
+  .page-content div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Visualization cards grid */
+  .page-content div[style*="gridTemplateColumns: 'repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+

@@ -120,7 +120,7 @@ export default function FrontendBackendVisualization() {
         </p>
 
         {/* Visualization Area */}
-        <div style={{
+        <div className="viz-area" style={{
           background: 'linear-gradient(180deg, #0f172a 0%, #1e293b 100%)',
           borderRadius: 'var(--radius-lg)',
           padding: '3rem 2rem',
@@ -137,7 +137,7 @@ export default function FrontendBackendVisualization() {
             backgroundSize: '40px 40px',
           }} />
 
-          <div style={{
+          <div className="viz-main-layout" style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -424,7 +424,7 @@ export default function FrontendBackendVisualization() {
         </div>
 
         {/* Controls */}
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div className="viz-controls" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
           <button 
             className="btn btn-secondary"
             onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
