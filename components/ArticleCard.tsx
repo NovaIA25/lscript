@@ -19,12 +19,23 @@ export default function ArticleCard({ article }: ArticleCardProps) {
     year: 'numeric'
   });
 
+  // Estimation du temps de lecture (environ 200 mots/min)
+  // Moyenne d'un article : 600-800 mots = 3-4 min
+  const readingTime = '3-5 min';
+
   return (
     <Link href={`/blog/${article.slug}`} className="card article-card">
-      <span className="article-card-category">{article.category}</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-2)' }}>
+        <span className="article-card-category">{article.category}</span>
+        <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-placeholder)' }}>
+          ⏱ {readingTime}
+        </span>
+      </div>
       <h3>{article.title}</h3>
       <p>{article.excerpt}</p>
-      <div className="article-card-meta">{formattedDate}</div>
+      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-placeholder)', marginTop: 'var(--space-3)' }}>
+        {formattedDate}
+      </div>
     </Link>
   );
 }
