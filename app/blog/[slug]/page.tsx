@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import NextSteps from '@/components/NextSteps';
+import { AdInContent } from '@/components/AdUnit';
 
 interface Props {
   params: { slug: string };
@@ -58,6 +59,10 @@ export default async function ArticlePage({ params }: Props) {
             className="article-content"
             dangerouslySetInnerHTML={{ __html: article.content || '' }}
           />
+
+          <div style={{ margin: '3rem 0' }}>
+            <AdInContent />
+          </div>
         </article>
 
         {/* Navigation guidance */}

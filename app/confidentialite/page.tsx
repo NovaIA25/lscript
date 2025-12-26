@@ -23,10 +23,15 @@ export default function ConfidentialitePage() {
             Elles ne sont jamais vendues ni partagées avec des tiers.
           </p>
 
-          <h2>Cookies</h2>
+          <h2>Cookies et Publicité</h2>
           <p>
             Ce site utilise des cookies techniques essentiels au fonctionnement.
-            Aucun cookie publicitaire ou de tracking n'est utilisé.
+          </p>
+          <p>
+            Nous utilisons également Google AdSense pour diffuser des publicités. Google utilise des cookies pour diffuser des annonces basées sur vos visites antérieures sur ce site ou sur d'autres sites Web.
+          </p>
+          <p>
+            Vous pouvez contrôler l'utilisation des cookies publicitaires dans vos paramètres Google ou en utilisant notre bandeau de consentement en bas de page.
           </p>
 
           <h2>Vos droits</h2>

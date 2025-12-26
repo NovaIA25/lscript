@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CookieConsent from '@/components/CookieConsent';
 import StructuredData, { createWebsiteSchema } from '@/components/StructuredData';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -66,9 +67,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Header />
         <main>{children}</main>
         <Footer />
+        <CookieConsent />
         <Analytics />
         <SpeedInsights />
       </body>
     </html>
   );
 }
+
