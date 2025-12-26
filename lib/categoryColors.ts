@@ -88,9 +88,15 @@ const defaultStyle: CategoryStyle = {
 
 /**
  * Récupère le style complet d'une catégorie
+ * Gère automatiquement la casse (minuscules/majuscules)
  */
 export function getCategoryStyle(category: string): CategoryStyle {
-  return categoryStyles[category] || defaultStyle;
+  // Recherche insensible à la casse
+  const normalized = category.toLowerCase();
+  const matchingKey = Object.keys(categoryStyles).find(
+    key => key.toLowerCase() === normalized
+  );
+  return matchingKey ? categoryStyles[matchingKey] : defaultStyle;
 }
 
 /**
