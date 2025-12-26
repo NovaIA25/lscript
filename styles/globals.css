@@ -3225,34 +3225,64 @@ img {
 @media (max-width: 640px) {
   /* Visualization area: reduce padding */
   .viz-area {
-    padding: 1.5rem 1rem !important;
-    min-height: 280px !important;
+    padding: 1rem 0.75rem !important;
+    min-height: auto !important;
   }
 
-  /* Main layout: stack vertically */
+  /* Main layout: stack vertically with less gap */
   .viz-main-layout {
     flex-direction: column !important;
-    gap: 2rem !important;
+    gap: 1rem !important;
   }
 
-  /* Frontend/Backend sides: full width */
+  /* Frontend/Backend sides: compact */
   .viz-main-layout > div {
-    padding: 1rem !important;
+    padding: 0.75rem !important;
     width: 100% !important;
   }
 
-  /* Browser/Server boxes: smaller */
+  /* Browser/Server boxes: much smaller */
   .viz-main-layout [style*="width: '180px'"],
   .viz-main-layout [style*="width: '140px'"] {
-    width: 120px !important;
-    height: 100px !important;
+    width: 90px !important;
+    height: 70px !important;
   }
 
-  /* Connection area in middle */
+  /* Smaller emoji icons */
+  .viz-main-layout [style*="fontSize: '3rem'"],
+  .viz-main-layout [style*="fontSize: '2.5rem'"] {
+    font-size: 1.5rem !important;
+  }
+
+  /* Smaller text labels */
+  .viz-main-layout [style*="fontSize: '0.875rem'"],
+  .viz-main-layout [style*="fontSize: '0.8rem'"] {
+    font-size: 0.7rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  /* Tech badges container: less padding */
+  .viz-main-layout [style*="marginTop: '1.5rem'"] {
+    margin-top: 0.75rem !important;
+    padding: 0.5rem !important;
+  }
+
+  /* API label smaller */
+  .viz-main-layout [style*="padding: '0.75rem 1.5rem'"] {
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Connection area in middle: compact */
   .viz-main-layout [style*="flex: 0.8"] {
     width: 100% !important;
     flex: none !important;
-    padding: 1rem 0 !important;
+    padding: 0.5rem 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Arrow labels smaller */
+  .viz-main-layout [style*="fontSize: '0.7rem'"] {
+    font-size: 0.6rem !important;
   }
 
   /* Controls: stack vertically */
