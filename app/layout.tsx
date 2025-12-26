@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   keywords: ['apprendre à coder', 'développement web débutant', 'programmation pour débutants', 'apprendre programmation', 'javascript débutant', 'html css', 'développement mobile', 'reconversion développeur', 'cours développement gratuit'],
   authors: [{ name: 'Lscript' }],
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/lscript32.png',
+    shortcut: '/lscript32.png',
+    apple: '/lscript32.png',
   },
   openGraph: {
     type: 'website',
