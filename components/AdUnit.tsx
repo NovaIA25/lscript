@@ -11,7 +11,7 @@ interface AdUnitProps {
 }
 
 // Your AdSense Publisher ID (to be replaced with actual ID)
-const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX';
+const ADSENSE_CLIENT = 'ca-pub-6312231252684715';
 
 export default function AdUnit({ slot, format = 'auto', style, className }: AdUnitProps) {
   const [hasConsent, setHasConsent] = useState(false);
