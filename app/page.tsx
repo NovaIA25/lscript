@@ -54,7 +54,10 @@ export default async function HomePage() {
 
       {/* Hero Section - SEO Optimized */}
       <section className="hero">
-        <div className="container">
+        {/* V2: Grid pattern background */}
+        <div className="hero-grid-pattern" />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="hero-content">
             <div className="badge badge-accent mb-6 inline-flex animate-fade-in text-sm font-medium shadow-sm hover:shadow-md transition-all">
               🎓 100% gratuit · Sans inscription
