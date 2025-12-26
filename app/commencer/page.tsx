@@ -1,145 +1,160 @@
-import Link from 'next/link';
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Par où commencer ?',
-  description: 'Tu débutes en développement ? Voici le parcours recommandé pour apprendre sans te perdre.',
-};
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const articlesDebutant = [
   {
     ordre: 1,
-    slug: 'cest-quoi-le-code',
-    titre: "C'est quoi le code ?",
-    description: 'Comprendre ce que signifie "coder" avant de commencer.',
+    slug: 'guide/programmer',
+    titre: "C'est quoi programmer ?",
+    description: 'Comprendre ce que signifie programmer avant de commencer.',
   },
   {
     ordre: 2,
-    slug: 'cest-quoi-une-variable',
-    titre: "C'est quoi une variable ?",
-    description: 'Le premier concept fondamental à maîtriser.',
+    slug: 'guide/ordinateur',
+    titre: "Comment fonctionne un ordinateur ?",
+    description: 'Comprendre la machine sur laquelle tu vas coder.',
+    soon: true,
   },
   {
     ordre: 3,
-    slug: 'cest-quoi-une-fonction',
-    titre: "C'est quoi une fonction ?",
-    description: 'Organiser son code de manière réutilisable.',
+    slug: 'guide/web',
+    titre: "Comment fonctionne le web ?",
+    description: 'Sites, serveurs, navigateurs : tout comprendre.',
     soon: true,
   },
   {
     ordre: 4,
-    slug: 'html-ou-css-difference',
-    titre: 'HTML ou CSS : quelle différence ?',
-    description: 'Comprendre les deux piliers du web.',
+    slug: 'guide/frontend-backend',
+    titre: 'Frontend vs Backend',
+    description: 'Les deux côtés du développement web.',
+    soon: true,
   },
   {
     ordre: 5,
-    slug: 'comment-creer-premier-site',
-    titre: 'Comment créer son premier site ?',
-    description: 'Passer à la pratique et voir un résultat concret.',
+    slug: 'guide/javascript',
+    titre: 'À quoi sert JavaScript ?',
+    description: 'Le langage qui rend les sites interactifs.',
     soon: true,
   },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 export default function CommencerPage() {
   return (
     <div className="page-content">
       <div className="container">
-        <div style={{ maxWidth: '700px' }}>
-          {/* Introduction rassurante */}
-          <div style={{ marginBottom: '3rem' }}>
+        <div className="commencer-wrapper">
+          {/* Hero */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="commencer-hero"
+          >
+            <span className="commencer-badge">🚀 Pour débutants</span>
             <h1>Par où commencer ?</h1>
-            <p style={{ 
-              fontSize: '1.25rem', 
-              marginTop: '1.5rem',
-              color: 'var(--color-text)'
-            }}>
-              Si tu débutes totalement, <strong style={{ color: 'var(--color-accent)' }}>tu es au bon endroit</strong>.
+            <p className="commencer-lead">
+              Tu veux apprendre à coder mais tu ne sais pas par où commencer ?
+              <br />
+              <strong>Tu es au bon endroit.</strong>
             </p>
-            <p style={{ marginTop: '1rem' }}>
-              Pas besoin de prérequis. Pas besoin de savoir quoi que ce soit.
-              On va y aller étape par étape, dans l'ordre.
-            </p>
-          </div>
+          </motion.div>
 
           {/* Conseil */}
-          <div className="card" style={{ 
-            marginBottom: '3rem',
-            background: 'rgba(255, 107, 53, 0.1)',
-            border: '1px solid rgba(255, 107, 53, 0.2)'
-          }}>
-            <p style={{ margin: 0 }}>
-              💡 <strong>Conseil :</strong> Lis les articles dans l'ordre. 
-              Chaque concept s'appuie sur le précédent.
-            </p>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="commencer-callout"
+          >
+            <div className="commencer-callout-icon">💡</div>
+            <div className="commencer-callout-content">
+              <strong>Conseil</strong>
+              <p>
+                Lis les chapitres dans l'ordre. Chaque concept s'appuie sur le précédent.
+                Pas besoin de prérequis — on part de zéro.
+              </p>
+            </div>
+          </motion.div>
 
-          {/* Parcours recommandé */}
-          <h2 style={{ marginBottom: '1.5rem' }}>Le parcours recommandé</h2>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {/* Parcours */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <h2 className="commencer-section-title">Le parcours recommandé</h2>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="commencer-steps"
+          >
             {articlesDebutant.map((article) => (
-              <div 
-                key={article.slug}
-                className="card"
-                style={{ 
-                  display: 'flex', 
-                  gap: '1.5rem', 
-                  alignItems: 'flex-start',
-                  opacity: article.soon ? 0.6 : 1
-                }}
+              <motion.div 
+                key={article.slug} 
+                variants={itemVariants}
+                className={`commencer-step ${article.soon ? 'commencer-step-soon' : ''}`}
               >
-                <div style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  background: article.soon 
-                    ? 'var(--color-surface-hover)' 
-                    : 'var(--color-accent)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 700,
-                  flexShrink: 0
-                }}>
+                <div className={`commencer-step-number ${article.soon ? 'commencer-step-number-muted' : ''}`}>
                   {article.ordre}
                 </div>
-                <div style={{ flex: 1 }}>
+                <div className="commencer-step-content">
                   {article.soon ? (
                     <>
-                      <h3 style={{ marginBottom: '0.25rem' }}>{article.titre}</h3>
-                      <p style={{ margin: 0, fontSize: '0.9375rem' }}>{article.description}</p>
-                      <span style={{ 
-                        fontSize: '0.75rem', 
-                        color: 'var(--color-text-muted)',
-                        marginTop: '0.5rem',
-                        display: 'inline-block'
-                      }}>
-                        📝 Bientôt disponible
-                      </span>
+                      <h3>{article.titre}</h3>
+                      <p>{article.description}</p>
+                      <span className="commencer-soon-badge">Bientôt disponible</span>
                     </>
                   ) : (
-                    <Link href={`/blog/${article.slug}`} style={{ display: 'block' }}>
-                      <h3 style={{ marginBottom: '0.25rem', color: 'var(--color-text)' }}>
-                        {article.titre}
-                      </h3>
-                      <p style={{ margin: 0, fontSize: '0.9375rem' }}>{article.description}</p>
+                    <Link href={`/${article.slug}`} className="commencer-step-link">
+                      <h3>{article.titre}</h3>
+                      <p>{article.description}</p>
+                      <span className="commencer-read-link">Lire →</span>
                     </Link>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* CTA */}
-          <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-            <p style={{ marginBottom: '1.5rem', fontSize: '1.125rem' }}>
-              Prêt à commencer ?
-            </p>
-            <Link href="/blog/cest-quoi-le-code" className="btn btn-primary">
-              Lire le premier article →
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="commencer-cta"
+          >
+            <p>Prêt à comprendre le développement ?</p>
+            <Link href="/guide/programmer" className="btn btn-primary btn-large">
+              Commencer le guide →
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
