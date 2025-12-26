@@ -191,6 +191,13 @@ export default function GuidePage() {
 
               const difficulty = chapter.difficulty && difficultyConfig[chapter.difficulty];
 
+              // Category colors based on difficulty
+              const categoryGradient = chapter.difficulty === 'beginner'
+                ? 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%)'
+                : chapter.difficulty === 'intermediate'
+                ? 'linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(234, 88, 12, 0.05) 100%)'
+                : 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%)';
+
               return (
                 <motion.div key={chapter.slug} variants={itemVariants}>
                   <Link
@@ -199,8 +206,35 @@ export default function GuidePage() {
                     style={{
                       position: 'relative',
                       opacity: isRead ? 0.8 : 1,
+                      background: categoryGradient,
+                      borderLeft: `4px solid ${
+                        chapter.difficulty === 'beginner' ? '#22c55e'
+                        : chapter.difficulty === 'intermediate' ? '#ea580c'
+                        : '#ef4444'
+                      }`,
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.05)',
+                      transition: 'all 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.05)';
                     }}
                   >
+                    {/* Icon badge */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 'var(--space-4)',
+                      right: 'var(--space-4)',
+                      fontSize: '2rem',
+                      opacity: 0.6,
+                    }}>
+                      {chapter.icon}
+                    </div>
+
                     <div className="guide-chapter-number">
                       {chapter.id === 0 ? '👋' : chapter.id}
                     </div>

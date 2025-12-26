@@ -33,7 +33,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="container">
         <div style={{
           display: 'grid',

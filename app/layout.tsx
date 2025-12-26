@@ -73,7 +73,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <Header />
-        <main>{children}</main>
+        <main id="main-content" role="main">
+          {children}
+        </main>
         <Footer />
         <CookieConsent />
         <Analytics />

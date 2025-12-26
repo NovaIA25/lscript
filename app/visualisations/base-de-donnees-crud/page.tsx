@@ -313,6 +313,8 @@ export default function DatabaseCRUDVisualization() {
             </div>
             <button
               onClick={() => setShowDetail(!showDetail)}
+              aria-label={showDetail ? 'Masquer les détails' : 'Afficher les détails'}
+              aria-expanded={showDetail}
               style={{
                 background: 'none',
                 border: '1px solid rgba(255,255,255,0.2)',
@@ -350,6 +352,7 @@ export default function DatabaseCRUDVisualization() {
             className="btn btn-secondary"
             onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
             disabled={currentStep === 0}
+            aria-label="Étape précédente"
             style={{ opacity: currentStep === 0 ? 0.5 : 1 }}
           >
             ← Précédent
@@ -364,6 +367,8 @@ export default function DatabaseCRUDVisualization() {
               <button
                 key={i}
                 onClick={() => setCurrentStep(i)}
+                aria-label={`Aller à l'étape ${i + 1}`}
+                aria-current={i === currentStep ? 'step' : undefined}
                 style={{
                   width: i === currentStep ? '24px' : '12px',
                   height: '12px',
@@ -380,12 +385,15 @@ export default function DatabaseCRUDVisualization() {
           <button
             className="btn btn-primary"
             onClick={() => currentStep === steps.length - 1 ? restart() : setCurrentStep(currentStep + 1)}
+            aria-label={currentStep === steps.length - 1 ? 'Recommencer la visualisation' : 'Étape suivante'}
           >
             {currentStep === steps.length - 1 ? '🔄 Recommencer' : 'Suivant →'}
           </button>
 
           <button
             onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+            aria-label={isAutoPlaying ? 'Mettre en pause la lecture automatique' : 'Démarrer la lecture automatique'}
+            aria-pressed={isAutoPlaying}
             style={{
               background: isAutoPlaying ? step.color : 'var(--color-surface)',
               border: 'none',
