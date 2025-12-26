@@ -23,6 +23,22 @@ const visualizations = [
     duration: '6 min',
     ready: true,
   },
+  {
+    slug: 'cest-quoi-une-api',
+    title: 'C\'est quoi une API ?',
+    description: 'Comprends comment les applications communiquent entre elles via les APIs.',
+    preview: ['📱', '🔌', '⚡'],
+    duration: '5 min',
+    ready: true,
+  },
+  {
+    slug: 'base-de-donnees-crud',
+    title: 'Base de données et CRUD',
+    description: 'Apprends les 4 opérations essentielles : Create, Read, Update, Delete.',
+    preview: ['🗄️', '✏️', '🔍'],
+    duration: '6 min',
+    ready: true,
+  },
 ];
 
 export default function VisualisationsPage() {
