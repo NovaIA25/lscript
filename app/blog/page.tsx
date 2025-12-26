@@ -3,8 +3,8 @@ import BlogClient from '@/components/BlogClient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Articles',
-  description: 'Tous les articles pour apprendre le développement web et mobile, expliqués simplement. Filtres par catégorie et recherche.',
+  title: 'Articles — Apprendre le développement web et mobile',
+  description: 'Plus de 30 articles gratuits pour apprendre à coder : développement web, mobile, JavaScript, Python. Explications simples, sans jargon, pour débutants.',
 };
 
 export default async function BlogPage() {

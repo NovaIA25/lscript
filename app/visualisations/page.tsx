@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Visualisations',
-  description: 'Visualisations 3D interactives pour comprendre le développement.',
+  title: 'Visualisations 3D — Comprendre le web interactivement',
+  description: 'Apprends le développement web avec des visualisations 3D interactives. Comprends comment fonctionne internet, les API et le frontend/backend visuellement.',
 };
 
 const visualizations = [
@@ -35,7 +35,7 @@ export default function VisualisationsPage() {
     <div className="page-content">
       <div className="container">
         <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-          <h1>🎮 Visualisations interactives</h1>
+          <h1>Visualisations interactives</h1>
           <p style={{ maxWidth: '600px' }}>
             Des scènes 3D pour comprendre visuellement comment le web fonctionne.
             Pas de gadget — juste des explications qui ont du sens.

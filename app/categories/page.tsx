@@ -3,8 +3,8 @@ import { getAllCategories } from '@/lib/articles';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Catégories',
-  description: 'Explore les différentes catégories d\'articles : bases, web, mobile, JavaScript et carrière.',
+  title: 'Catégories — Développement Web, Mobile et Bases du Code',
+  description: 'Explore toutes les catégories : bases de la programmation, développement web, applications mobiles, JavaScript et carrière. Articles gratuits pour débutants.',
 };
 
 export default function CategoriesPage() {
@@ -14,9 +14,9 @@ export default function CategoriesPage() {
     <div className="page-content">
       <div className="container">
         <div className="section-header" style={{ textAlign: 'left', marginBottom: '3rem' }}>
-          <h1>Catégories</h1>
+          <h1>Apprendre le développement par catégorie</h1>
           <p style={{ maxWidth: '600px' }}>
-            Choisis un domaine qui t'intéresse et découvre les articles associés.
+            Choisis un domaine qui t'intéresse : bases, web ou mobile. Chaque catégorie contient des articles progressifs pour débutants.
           </p>
         </div>
 
