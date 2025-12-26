@@ -71,16 +71,6 @@ export default function AboutPage() {
             Lscript est un projet indépendant, créé par un développeur passionné
             qui a lui-même appris de façon autodidacte.
           </p>
-          <p style={{ marginBottom: 'var(--space-6)' }}>
-            Le code source est disponible sur{' '}
-            <a
-              href="https://github.com/NovaIA25/lscript"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>.
-          </p>
 
           <p style={{ marginBottom: 'var(--space-12)' }}>
             Une question ? Une suggestion ?{' '}
