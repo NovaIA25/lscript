@@ -221,7 +221,7 @@ export default async function HomePage() {
 
             {/* Article 2 */}
             <Link 
-              href="/blog/comment-fonctionne-web"
+              href="/blog/comment-fonctionne-site-internet"
               style={{ 
                 padding: 'var(--space-6)', 
                 background: 'white', 
@@ -273,7 +273,7 @@ export default async function HomePage() {
 
             {/* Article 3 */}
             <Link 
-              href="/blog/frontend-backend-difference"
+              href="/blog/frontend-vs-backend"
               style={{ 
                 padding: 'var(--space-6)', 
                 background: 'white', 
