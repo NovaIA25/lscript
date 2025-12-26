@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import StructuredData, { createWebsiteSchema } from '@/components/StructuredData';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const websiteSchema = createWebsiteSchema();
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
     <html lang="fr">
@@ -44,6 +46,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        {gaId && <GoogleAnalytics measurementId={gaId} />}
         <Analytics />
         <SpeedInsights />
       </body>

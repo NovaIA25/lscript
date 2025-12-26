@@ -24,7 +24,7 @@ const visualizations = [
     icon: '⚙️',
     preview: ['💻', '⟷', '🗃️'],
     duration: '6 min',
-    ready: false,
+    ready: true,
     color: '#2563eb',
   },
   {
