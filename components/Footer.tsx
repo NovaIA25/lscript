@@ -1,9 +1,26 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) return;
+    
+    setStatus('loading');
+    
+    // Simulate API call - replace with actual service (Mailchimp, ConvertKit, etc.)
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // For now, just show success (in production, connect to email service)
+    setStatus('success');
+    setEmail('');
+  };
 
   return (
     <footer className="footer">
@@ -53,12 +70,70 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter & Réseaux */}
+          {/* Newsletter */}
           <div>
             <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-semibold)', marginBottom: 'var(--space-4)', color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)' }}>
-              Suivre Lscript
+              Newsletter
             </h4>
-            <div style={{ display: 'flex', gap: 'var(--space-4)', marginBottom: 'var(--space-4)' }}>
+            
+            {status === 'success' ? (
+              <div style={{
+                padding: 'var(--space-4)',
+                background: '#dcfce7',
+                borderRadius: 'var(--radius-lg)',
+                color: '#15803d',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 'var(--weight-medium)'
+              }}>
+                ✅ Merci ! Tu recevras les prochains articles.
+              </div>
+            ) : (
+              <>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)', marginBottom: 'var(--space-3)' }}>
+                  Reçois les nouveaux articles directement dans ta boîte mail.
+                </p>
+                <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex', gap: 'var(--space-2)' }}>
+                  <input
+                    type="email"
+                    placeholder="ton@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    style={{
+                      flex: 1,
+                      padding: 'var(--space-3)',
+                      fontSize: 'var(--text-sm)',
+                      borderRadius: 'var(--radius-md)',
+                      border: '1px solid var(--color-border)',
+                      background: 'var(--color-surface)',
+                      color: 'var(--color-text)',
+                      outline: 'none'
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    style={{
+                      padding: 'var(--space-3) var(--space-4)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 'var(--weight-semibold)',
+                      borderRadius: 'var(--radius-md)',
+                      border: 'none',
+                      background: 'var(--color-accent)',
+                      color: 'white',
+                      cursor: status === 'loading' ? 'wait' : 'pointer',
+                      opacity: status === 'loading' ? 0.7 : 1,
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    {status === 'loading' ? '...' : 'OK'}
+                  </button>
+                </form>
+              </>
+            )}
+
+            {/* Social Links */}
+            <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-4)' }}>
               <a 
                 href="https://twitter.com/lscript_fr" 
                 target="_blank" 
@@ -104,9 +179,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)', marginBottom: 'var(--space-3)' }}>
-              Newsletter à venir — reste connecté !
-            </p>
           </div>
         </div>
 
