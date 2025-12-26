@@ -1,11 +1,45 @@
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
+import StructuredData, { createFAQSchema, createWebsiteSchema } from '@/components/StructuredData';
 
 const categories = [
   { slug: 'bases', icon: '🧱', name: 'Bases', description: 'Les fondamentaux du code' },
   { slug: 'web', icon: '🌐', name: 'Web', description: 'Créer des sites internet' },
   { slug: 'mobile', icon: '📱', name: 'Mobile', description: 'Faire des applications' },
+];
+
+const faqs = [
+  {
+    question: "C'est quoi coder ?",
+    answer: "Coder, c'est écrire des instructions dans un langage que l'ordinateur comprend pour lui dire quoi faire. C'est comme donner une recette de cuisine très précise à une machine."
+  },
+  {
+    question: "Par où commencer pour apprendre à coder ?",
+    answer: "Commencez par comprendre les bases : qu'est-ce qu'un langage de programmation, comment fonctionne un site web. Ensuite, choisissez un premier langage simple comme Python ou JavaScript et pratiquez avec des petits projets."
+  },
+  {
+    question: "Combien de temps faut-il pour apprendre à coder ?",
+    answer: "Les bases peuvent être acquises en quelques semaines à 3 mois. Pour devenir autonome sur des projets réels, comptez 6 mois à 1 an de pratique régulière. L'apprentissage est continu tout au long de la carrière."
+  },
+  {
+    question: "Quel langage de programmation choisir pour débuter ?",
+    answer: "Python est idéal pour les débutants grâce à sa syntaxe simple et lisible. JavaScript est parfait si vous voulez créer des sites web. Les deux sont très demandés sur le marché du travail."
+  },
+  {
+    question: "Faut-il être bon en maths pour coder ?",
+    answer: "Non, pas pour la plupart des développements web et mobile. Les maths de base suffisent. La logique et la capacité à résoudre des problèmes sont plus importantes que les mathématiques avancées."
+  },
+  {
+    question: "Peut-on apprendre à coder gratuitement ?",
+    answer: "Oui, absolument ! Lscript.fr propose des articles 100% gratuits pour apprendre le développement. Il existe aussi des ressources comme freeCodeCamp, MDN, et de nombreux tutoriels en ligne gratuits."
+  }
+];
+
+const stats = [
+  { value: '30+', label: 'Articles gratuits' },
+  { value: '100%', label: 'Gratuit, sans pub' },
+  { value: '0', label: 'Jargon inutile' },
 ];
 
 export default async function HomePage() {
@@ -14,6 +48,10 @@ export default async function HomePage() {
 
   return (
     <>
+      {/* Schema.org Structured Data */}
+      <StructuredData data={createWebsiteSchema()} />
+      <StructuredData data={createFAQSchema(faqs)} />
+
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
@@ -33,6 +71,39 @@ export default async function HomePage() {
                 Voir les catégories
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section style={{ background: 'var(--color-primary)', padding: 'var(--space-6) 0' }}>
+        <div className="container">
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: 'var(--space-10)', 
+            flexWrap: 'wrap',
+            textAlign: 'center'
+          }}>
+            {stats.map((stat, index) => (
+              <div key={index} style={{ minWidth: '120px' }}>
+                <div style={{ 
+                  fontSize: 'var(--text-4xl)', 
+                  fontWeight: 'var(--weight-bold)', 
+                  color: 'white',
+                  lineHeight: 1
+                }}>
+                  {stat.value}
+                </div>
+                <div style={{ 
+                  fontSize: 'var(--text-sm)', 
+                  color: 'rgba(255,255,255,0.8)',
+                  marginTop: 'var(--space-1)'
+                }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -149,6 +220,51 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Questions fréquentes</h2>
+            <p>Les réponses aux questions que se posent tous les débutants.</p>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            {faqs.map((faq, index) => (
+              <details 
+                key={index}
+                style={{
+                  background: 'var(--color-surface)',
+                  borderRadius: 'var(--radius-md)',
+                  marginBottom: 'var(--space-3)',
+                  border: '1px solid var(--color-border)',
+                  overflow: 'hidden'
+                }}
+              >
+                <summary style={{
+                  padding: 'var(--space-4)',
+                  cursor: 'pointer',
+                  fontWeight: 'var(--weight-semibold)',
+                  fontSize: 'var(--text-base)',
+                  listStyle: 'none',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}>
+                  {faq.question}
+                  <span style={{ marginLeft: 'var(--space-2)' }}>+</span>
+                </summary>
+                <div style={{
+                  padding: '0 var(--space-4) var(--space-4)',
+                  color: 'var(--color-text-muted)',
+                  lineHeight: 'var(--leading-relaxed)'
+                }}>
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section cta-section">
         <div className="container">
@@ -164,3 +280,4 @@ export default async function HomePage() {
     </>
   );
 }
+
