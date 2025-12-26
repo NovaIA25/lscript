@@ -38,7 +38,7 @@ const faqs = [
 
 const stats = [
   { value: '30+', label: 'Articles gratuits' },
-  { value: '100%', label: 'Gratuit, sans pub' },
+  { value: '100%', label: 'Gratuit' },
   { value: '0', label: 'Jargon inutile' },
 ];
 
@@ -56,8 +56,8 @@ export default async function HomePage() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <div className="hero-badge">
-              🎓 100% gratuit · Sans pub · Sans inscription
+            <div className="badge badge-accent mb-6 inline-flex animate-fade-in text-sm font-medium shadow-sm hover:shadow-md transition-all">
+              🎓 100% gratuit · Sans inscription
             </div>
             <h1>Apprendre à coder en 2025 : le guide pour débutants</h1>
             

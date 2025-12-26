@@ -107,7 +107,7 @@ export default function AboutPage() {
                   100% gratuit
                 </p>
                 <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
-                  Sans pub, sans tracking
+                  Sans tracking intrusif
                 </p>
               </div>
             </div>
