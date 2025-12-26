@@ -634,6 +634,188 @@ pre code {
 }
 
 /* ========================================
+   SECTIONS PREMIUM — Apple-Level Strata
+   ======================================== */
+
+.section-premium-strata {
+  padding: var(--space-20) 0;
+  background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+  position: relative;
+}
+
+.section-premium-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-16);
+}
+
+.section-premium-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0 0 var(--space-4);
+}
+
+.section-premium-header p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ========================================
+   CARDS PREMIUM — Apple-Style Elevation
+   ======================================== */
+
+.cards-premium-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-premium {
+  display: block;
+  padding: var(--space-8);
+  background: #ffffff;
+  border-radius: var(--radius-2xl);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.02);
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.04);
+}
+
+.card-premium h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+  transition: color 0.3s ease;
+}
+
+.card-premium:hover h3 {
+  color: var(--color-primary);
+}
+
+.card-premium p {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ========================================
+   CTA PREMIUM — Final Call-to-Action
+   ======================================== */
+
+.section-premium-cta {
+  padding: var(--space-24) 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  position: relative;
+}
+
+.cta-premium-content {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-premium-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0 0 var(--space-6);
+}
+
+.cta-premium-content p {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-10);
+}
+
+/* ========================================
+   FAQ PREMIUM — Simplified & Clean
+   ======================================== */
+
+.section-premium-faq {
+  padding: var(--space-20) 0 var(--space-24);
+  background: #ffffff;
+}
+
+.faq-premium-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-premium-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-premium-item:hover {
+  border-color: var(--color-text-muted);
+}
+
+.faq-premium-item[open] {
+  border-color: var(--color-primary);
+}
+
+.faq-premium-question {
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--text-base);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.faq-premium-question:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.faq-premium-item[open] .faq-premium-question {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-premium-strata,
+  .section-premium-cta,
+  .section-premium-faq {
+    padding: var(--space-16) 0;
+  }
+
+  .cards-premium-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ========================================
    ARTICLE CARDS V4 — Premium Content Cards
    ======================================== */
 
