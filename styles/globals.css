@@ -2476,3 +2476,113 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ========================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   ======================================== */
+
+/* Mobile: 320px - 640px */
+@media (max-width: 640px) {
+  /* Reduce excessive vertical spacing on mobile */
+  .page-content {
+    padding-top: var(--space-12) !important;
+    padding-bottom: var(--space-16) !important;
+  }
+
+  /* Cards grid: single column on mobile */
+  .cards-premium-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Visualizations page: stack preview emojis vertically */
+  .card-premium {
+    padding: var(--space-4) !important;
+  }
+
+  /* Typography adjustments */
+  h1 {
+    font-size: var(--text-3xl) !important;
+  }
+
+  h2 {
+    font-size: var(--text-xl) !important;
+  }
+
+  /* Container max-width override for mobile */
+  .container {
+    padding-left: var(--space-4) !important;
+    padding-right: var(--space-4) !important;
+  }
+
+  /* Guide page: reduce margins */
+  .guide-chapter-card {
+    padding: var(--space-4) !important;
+  }
+
+  .guide-chapter-number {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: var(--text-lg) !important;
+  }
+
+  /* Reduce button sizes on mobile */
+  .btn,
+  .btn-premium {
+    padding: var(--space-3) var(--space-5) !important;
+    font-size: var(--text-sm) !important;
+  }
+
+  /* Article header spacing */
+  .article-header {
+    margin-bottom: var(--space-8) !important;
+  }
+
+  /* Hide decorative elements on very small screens */
+  @media (max-width: 380px) {
+    .guide-callout-icon {
+      display: none;
+    }
+  }
+}
+
+/* Tablet: 641px - 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Cards grid: 2 columns on tablet */
+  .cards-premium-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Mobile landscape & small tablets */
+@media (max-width: 768px) {
+  /* Stack "Why Visual Learning" section vertically on mobile */
+  div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+    padding: var(--space-6) !important;
+  }
+
+  /* Reduce footer padding */
+  footer {
+    padding: var(--space-12) 0 !important;
+  }
+
+  /* Newsletter form: stack vertically */
+  footer form {
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+  }
+
+  footer input[type="email"] {
+    width: 100% !important;
+  }
+
+  footer button[type="submit"] {
+    width: 100% !important;
+  }
+}
