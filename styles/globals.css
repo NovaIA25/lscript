@@ -1106,108 +1106,63 @@ pre code {
 }
 
 /* ========================================
-   CALLOUTS PREMIUM — Glassmorphism Design
+   CALLOUTS PREMIUM — Compact Inline Design
    ======================================== */
 
 .callout {
   position: relative;
   display: flex;
-  gap: var(--space-5);
-  padding: var(--space-6) var(--space-8);
-  border-radius: var(--radius-2xl);
-  margin: var(--space-12) 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-/* Accent bar on the left */
-.callout::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(
-    180deg,
-    var(--callout-color, #10b981) 0%,
-    var(--callout-color-dark, #059669) 100%
-  );
-  border-radius: var(--radius-2xl) 0 0 var(--radius-2xl);
-}
-
-/* Subtle gradient overlay */
-.callout::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 100%
-  );
-  pointer-events: none;
-  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  margin: var(--space-8) 0;
+  background: var(--callout-bg, rgba(16, 185, 129, 0.06));
+  border: 1px solid var(--callout-border, rgba(16, 185, 129, 0.15));
+  transition: all 0.25s ease;
 }
 
 .callout:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: var(--callout-bg-hover, rgba(16, 185, 129, 0.1));
+  border-color: var(--callout-border-hover, rgba(16, 185, 129, 0.25));
 }
 
+/* Title badge with icon */
 .callout-title {
-  position: relative;
-  z-index: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  font-size: var(--text-sm);
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background: var(--callout-badge-bg, rgba(16, 185, 129, 0.12));
+  border-radius: var(--radius-md);
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--callout-text, #047857);
-  margin-bottom: var(--space-3);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .callout-title span:first-child {
-  font-size: 1.25rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-.callout-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  font-size: 0.85rem;
 }
 
 .callout-content {
-  position: relative;
-  z-index: 1;
   flex: 1;
-  color: var(--color-text-secondary);
+  min-width: 0;
 }
 
 .callout-content p {
-  font-size: var(--text-base);
-  line-height: 1.75;
-  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  margin: 0;
+  color: var(--color-text-secondary);
 }
 
-.callout-content p:last-child {
-  margin-bottom: 0;
+.callout-content p:not(:last-child) {
+  margin-bottom: var(--space-2);
 }
 
 .callout-content strong {
@@ -1217,103 +1172,86 @@ pre code {
 
 .callout-content ul,
 .callout-content ol {
-  margin: var(--space-3) 0 0;
-  padding-left: var(--space-5);
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-4);
 }
 
 .callout-content li {
-  font-size: var(--text-base);
-  line-height: 1.75;
-  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-1);
   color: var(--color-text-secondary);
 }
 
 .callout-content li::marker {
-  color: var(--callout-color, #10b981);
+  color: var(--callout-text, #047857);
 }
 
 .callout-content blockquote {
-  margin: var(--space-4) 0;
-  padding-left: var(--space-4);
-  border-left: 3px solid var(--callout-color, #10b981);
+  margin: var(--space-3) 0;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--callout-text, #047857);
   font-style: italic;
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
 
 /* ========================================
-   Callout Variants — Premium Color Schemes
+   Callout Variants — Compact Color Schemes
    ======================================== */
 
 .callout-tip {
-  --callout-color: #10b981;
-  --callout-color-dark: #059669;
   --callout-text: #047857;
-  background: linear-gradient(
-    135deg,
-    rgba(236, 253, 245, 0.9) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  border-color: rgba(16, 185, 129, 0.2);
+  --callout-bg: rgba(16, 185, 129, 0.06);
+  --callout-bg-hover: rgba(16, 185, 129, 0.1);
+  --callout-border: rgba(16, 185, 129, 0.15);
+  --callout-border-hover: rgba(16, 185, 129, 0.25);
+  --callout-badge-bg: rgba(16, 185, 129, 0.12);
 }
 
 .callout-warning {
-  --callout-color: #f59e0b;
-  --callout-color-dark: #d97706;
   --callout-text: #b45309;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 251, 235, 0.9) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  border-color: rgba(245, 158, 11, 0.2);
+  --callout-bg: rgba(245, 158, 11, 0.06);
+  --callout-bg-hover: rgba(245, 158, 11, 0.1);
+  --callout-border: rgba(245, 158, 11, 0.15);
+  --callout-border-hover: rgba(245, 158, 11, 0.25);
+  --callout-badge-bg: rgba(245, 158, 11, 0.12);
 }
 
 .callout-summary {
-  --callout-color: #6366f1;
-  --callout-color-dark: #4f46e5;
   --callout-text: #4338ca;
-  background: linear-gradient(
-    135deg,
-    rgba(238, 242, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  border-color: rgba(99, 102, 241, 0.2);
+  --callout-bg: rgba(99, 102, 241, 0.06);
+  --callout-bg-hover: rgba(99, 102, 241, 0.1);
+  --callout-border: rgba(99, 102, 241, 0.15);
+  --callout-border-hover: rgba(99, 102, 241, 0.25);
+  --callout-badge-bg: rgba(99, 102, 241, 0.12);
 }
 
 .callout-example {
-  --callout-color: #3b82f6;
-  --callout-color-dark: #2563eb;
   --callout-text: #1d4ed8;
-  background: linear-gradient(
-    135deg,
-    rgba(239, 246, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  border-color: rgba(59, 130, 246, 0.2);
+  --callout-bg: rgba(59, 130, 246, 0.06);
+  --callout-bg-hover: rgba(59, 130, 246, 0.1);
+  --callout-border: rgba(59, 130, 246, 0.15);
+  --callout-border-hover: rgba(59, 130, 246, 0.25);
+  --callout-badge-bg: rgba(59, 130, 246, 0.12);
 }
 
 .callout-key-point {
-  --callout-color: #f97316;
-  --callout-color-dark: #ea580c;
   --callout-text: #c2410c;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 247, 237, 0.9) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  border-color: rgba(249, 115, 22, 0.2);
+  --callout-bg: rgba(249, 115, 22, 0.06);
+  --callout-bg-hover: rgba(249, 115, 22, 0.1);
+  --callout-border: rgba(249, 115, 22, 0.15);
+  --callout-border-hover: rgba(249, 115, 22, 0.25);
+  --callout-badge-bg: rgba(249, 115, 22, 0.12);
 }
 
 .callout-info {
-  --callout-color: #0ea5e9;
-  --callout-color-dark: #0284c7;
   --callout-text: #0369a1;
-  background: linear-gradient(
-    135deg,
-    rgba(240, 249, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  border-color: rgba(14, 165, 233, 0.2);
+  --callout-bg: rgba(14, 165, 233, 0.06);
+  --callout-bg-hover: rgba(14, 165, 233, 0.1);
+  --callout-border: rgba(14, 165, 233, 0.15);
+  --callout-border-hover: rgba(14, 165, 233, 0.25);
+  --callout-badge-bg: rgba(14, 165, 233, 0.12);
 }
 
 /* ========================================

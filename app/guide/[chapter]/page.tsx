@@ -292,6 +292,366 @@ const chapterContent: Record<string, string> = {
       Dans le prochain chapitre, on va voir comment fonctionne réellement un ordinateur — 
     </p>
   `,
+  ordinateur: `
+    <p class="article-lead">
+      Un ordinateur peut sembler magique. Tu cliques, et des choses se passent. 
+      Mais comment ça fonctionne vraiment à l'intérieur ? Démystifions la machine.
+    </p>
+
+    <h2 id="composants">Les composants essentiels</h2>
+    <p>Un ordinateur, c'est essentiellement 4 composants qui travaillent ensemble :</p>
+
+    <h3 id="processeur">Le processeur (CPU)</h3>
+    <p>
+      C'est le <strong>cerveau</strong> de l'ordinateur. Il exécute les instructions de tes programmes, 
+      une par une, à une vitesse vertigineuse (des milliards par seconde).
+    </p>
+
+    <h3 id="memoire">La mémoire vive (RAM)</h3>
+    <p>
+      C'est la <strong>mémoire de travail</strong>. Elle stocke temporairement les données 
+      que le processeur utilise en ce moment. Quand tu éteins l'ordinateur, elle s'efface.
+    </p>
+
+    <h3 id="stockage">Le stockage (SSD/Disque dur)</h3>
+    <p>
+      C'est la <strong>mémoire permanente</strong>. Tes fichiers, tes applications, tout est ici. 
+      Ces données restent même quand l'ordinateur est éteint.
+    </p>
+
+    <h3 id="carte-mere">La carte mère</h3>
+    <p>
+      C'est le <strong>système nerveux</strong> qui connecte tous les composants entre eux 
+      et leur permet de communiquer.
+    </p>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 Analogie</div>
+      <p>
+        Imagine une cuisine : le chef (CPU) a besoin d'un plan de travail (RAM) pour préparer les plats, 
+        d'un réfrigérateur (stockage) pour garder les ingrédients, et d'une cuisine équipée (carte mère) 
+        pour tout connecter.
+      </p>
+    </div>
+
+    <h2 id="binaire">Le langage binaire</h2>
+    <p>
+      À la base, un ordinateur ne comprend qu'une seule chose : <strong>le courant électrique</strong>.
+    </p>
+    <p>
+      Soit le courant passe (1), soit il ne passe pas (0). C'est le <strong>langage binaire</strong>.
+    </p>
+    <p>
+      Tout ce que tu vois sur ton écran — texte, images, vidéos — est représenté par des combinaisons 
+      de 0 et de 1. Par exemple, la lettre "A" s'écrit 01000001 en binaire.
+    </p>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li>Le <strong>processeur</strong> exécute les instructions</li>
+        <li>La <strong>RAM</strong> stocke les données temporaires</li>
+        <li>Le <strong>stockage</strong> garde les données en permanence</li>
+        <li>Tout est représenté en <strong>binaire</strong> (0 et 1)</li>
+      </ul>
+    </div>
+  `,
+  web: `
+    <p class="article-lead">
+      Tu utilises le web tous les jours. Mais que se passe-t-il vraiment quand tu tapes une adresse 
+      dans ton navigateur ? Voyons ça ensemble.
+    </p>
+
+    <h2 id="client-serveur">Le modèle client-serveur</h2>
+    <p>
+      Le web fonctionne sur un principe simple : <strong>demande et réponse</strong>.
+    </p>
+    <ul>
+      <li>Ton navigateur (Chrome, Firefox) est le <strong>client</strong> — il demande des pages</li>
+      <li>Un ordinateur distant est le <strong>serveur</strong> — il répond avec le contenu</li>
+    </ul>
+
+    <h2 id="url">Que contient une URL ?</h2>
+    <p>Prenons l'exemple : <code>https://lscript.fr/guide</code></p>
+    <ul>
+      <li><code>https://</code> → le protocole sécurisé</li>
+      <li><code>lscript.fr</code> → le nom de domaine (l'adresse du serveur)</li>
+      <li><code>/guide</code> → le chemin vers une page spécifique</li>
+    </ul>
+
+    <h2 id="requete-http">Comment fonctionne une requête</h2>
+    <ol>
+      <li>Tu tapes une URL dans ton navigateur</li>
+      <li>Le navigateur trouve l'adresse IP du serveur (grâce au DNS)</li>
+      <li>Il envoie une <strong>requête HTTP</strong> au serveur</li>
+      <li>Le serveur traite la demande et renvoie une <strong>réponse</strong></li>
+      <li>Le navigateur affiche le contenu (HTML, CSS, JavaScript)</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 En pratique</div>
+      <p>
+        Tout ça se passe en quelques millisecondes. Quand tu cliques sur un lien, 
+        des dizaines de requêtes sont envoyées pour charger la page complète.
+      </p>
+    </div>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li>Le web fonctionne en <strong>client-serveur</strong></li>
+        <li>Le navigateur envoie des <strong>requêtes HTTP</strong></li>
+        <li>Le serveur répond avec du <strong>HTML, CSS, JavaScript</strong></li>
+      </ul>
+    </div>
+  `,
+  'frontend-backend': `
+    <p class="article-lead">
+      Frontend, backend... Ces termes reviennent constamment. Quelle est la différence ? 
+      Et pourquoi est-ce important de les distinguer ?
+    </p>
+
+    <h2 id="frontend">Le Frontend (côté client)</h2>
+    <p>
+      Le frontend, c'est tout ce que l'utilisateur <strong>voit et touche</strong> directement.
+    </p>
+    <p>Technologies principales :</p>
+    <ul>
+      <li><strong>HTML</strong> → la structure de la page</li>
+      <li><strong>CSS</strong> → le style et le design</li>
+      <li><strong>JavaScript</strong> → l'interactivité</li>
+    </ul>
+
+    <h2 id="backend">Le Backend (côté serveur)</h2>
+    <p>
+      Le backend, c'est tout ce qui se passe <strong>derrière le rideau</strong>, côté serveur.
+    </p>
+    <p>Il gère :</p>
+    <ul>
+      <li>La <strong>logique métier</strong> (calculs, règles)</li>
+      <li>La <strong>base de données</strong> (stockage des informations)</li>
+      <li>La <strong>sécurité</strong> (authentification, permissions)</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 Analogie restaurant</div>
+      <p>
+        Le frontend, c'est la salle du restaurant (ce que le client voit). 
+        Le backend, c'est la cuisine (où tout est préparé).
+      </p>
+    </div>
+
+    <h2 id="fullstack">Et le Fullstack ?</h2>
+    <p>
+      Un développeur <strong>fullstack</strong> maîtrise les deux. Il peut créer une application 
+      complète de A à Z.
+    </p>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li><strong>Frontend</strong> = interface visible (HTML, CSS, JS)</li>
+        <li><strong>Backend</strong> = serveur et base de données</li>
+        <li><strong>Fullstack</strong> = les deux compétences réunies</li>
+      </ul>
+    </div>
+  `,
+  javascript: `
+    <p class="article-lead">
+      JavaScript est LE langage du web. Il est partout : sites web, applications mobiles, 
+      serveurs... Pourquoi est-il si populaire ?
+    </p>
+
+    <h2 id="role">Le rôle de JavaScript</h2>
+    <p>
+      À l'origine, JavaScript servait à ajouter de l'<strong>interactivité</strong> aux pages web :
+    </p>
+    <ul>
+      <li>Animer un menu déroulant</li>
+      <li>Valider un formulaire avant envoi</li>
+      <li>Charger du contenu sans rafraîchir la page</li>
+    </ul>
+
+    <h2 id="evolution">L'évolution de JavaScript</h2>
+    <p>
+      Aujourd'hui, JavaScript peut faire bien plus :
+    </p>
+    <ul>
+      <li><strong>Frontend</strong> → avec React, Vue, Angular</li>
+      <li><strong>Backend</strong> → avec Node.js</li>
+      <li><strong>Mobile</strong> → avec React Native</li>
+      <li><strong>Desktop</strong> → avec Electron</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 Pourquoi JavaScript ?</div>
+      <p>
+        C'est le seul langage que tous les navigateurs comprennent nativement. 
+        Et grâce à Node.js, on peut aussi l'utiliser côté serveur.
+      </p>
+    </div>
+
+    <h2 id="exemple">Exemple de code</h2>
+    <pre><code>// Afficher un message
+alert("Bienvenue sur Lscript !");
+
+// Changer le contenu d'un élément
+document.querySelector("h1").textContent = "Hello World";</code></pre>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li>JavaScript rend les pages <strong>interactives</strong></li>
+        <li>Il fonctionne côté <strong>client ET serveur</strong></li>
+        <li>C'est le langage idéal pour <strong>débuter</strong></li>
+      </ul>
+    </div>
+  `,
+  backend: `
+    <p class="article-lead">
+      Le backend, c'est la partie invisible mais essentielle de toute application. 
+      Serveurs, APIs, bases de données... Explorons ce monde.
+    </p>
+
+    <h2 id="serveur">Qu'est-ce qu'un serveur ?</h2>
+    <p>
+      Un serveur, c'est simplement un ordinateur qui <strong>écoute et répond</strong> 
+      aux requêtes des clients 24h/24.
+    </p>
+
+    <h2 id="api">Les APIs</h2>
+    <p>
+      Une API (Application Programming Interface) permet à différentes applications 
+      de <strong>communiquer entre elles</strong>.
+    </p>
+    <p>Exemple : quand tu te connectes avec Google sur un site, le site utilise l'API de Google.</p>
+
+    <h2 id="bdd">Les bases de données</h2>
+    <p>
+      Les bases de données stockent toutes les informations de manière organisée :
+    </p>
+    <ul>
+      <li><strong>SQL</strong> (MySQL, PostgreSQL) → données structurées en tables</li>
+      <li><strong>NoSQL</strong> (MongoDB) → données plus flexibles</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 Langages backend populaires</div>
+      <p>
+        Node.js (JavaScript), Python, PHP, Java, Go, Ruby... 
+        Chacun a ses forces selon le projet.
+      </p>
+    </div>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li>Le <strong>serveur</strong> traite les requêtes</li>
+        <li>Les <strong>APIs</strong> permettent la communication</li>
+        <li>Les <strong>bases de données</strong> stockent les informations</li>
+      </ul>
+    </div>
+  `,
+  mobile: `
+    <p class="article-lead">
+      Créer une application mobile est le rêve de beaucoup de débutants. 
+      Quelles sont les options ? Par où commencer ?
+    </p>
+
+    <h2 id="natif">Le développement natif</h2>
+    <p>
+      Développer <strong>spécifiquement</strong> pour chaque plateforme :
+    </p>
+    <ul>
+      <li><strong>iOS</strong> → Swift ou Objective-C</li>
+      <li><strong>Android</strong> → Kotlin ou Java</li>
+    </ul>
+    <p>Avantages : performances optimales, accès à toutes les fonctionnalités.</p>
+    <p>Inconvénient : il faut maintenir 2 codes différents.</p>
+
+    <h2 id="cross-platform">Le cross-platform</h2>
+    <p>
+      Un seul code pour les deux plateformes :
+    </p>
+    <ul>
+      <li><strong>React Native</strong> → JavaScript</li>
+      <li><strong>Flutter</strong> → Dart</li>
+      <li><strong>Expo</strong> → JavaScript simplifié</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 Recommandation pour débuter</div>
+      <p>
+        React Native avec Expo est idéal pour débuter. Tu codes en JavaScript 
+        et tu peux tester directement sur ton téléphone.
+      </p>
+    </div>
+
+    <h2 id="pwa">Les PWA (Progressive Web Apps)</h2>
+    <p>
+      Une PWA est un site web qui se comporte comme une application. 
+      Pas besoin de passer par les stores !
+    </p>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li><strong>Natif</strong> = meilleures performances, plus complexe</li>
+        <li><strong>Cross-platform</strong> = un code pour tout</li>
+        <li><strong>React Native + Expo</strong> = idéal pour débuter</li>
+      </ul>
+    </div>
+  `,
+  metier: `
+    <p class="article-lead">
+      Le métier de développeur fait rêver. Mais quelle est la réalité du terrain ? 
+      Salaires, formations, débouchés... Faisons le point.
+    </p>
+
+    <h2 id="parcours">Les parcours possibles</h2>
+    <ul>
+      <li><strong>École d'ingénieurs</strong> → 5 ans, très technique</li>
+      <li><strong>Université</strong> → Licence/Master informatique</li>
+      <li><strong>Bootcamp</strong> → 3-6 mois intensifs</li>
+      <li><strong>Autodidacte</strong> → à ton rythme, avec des ressources en ligne</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 La vérité</div>
+      <p>
+        Le diplôme compte moins que les compétences. Beaucoup de développeurs 
+        en poste sont autodidactes ou sortent de bootcamps.
+      </p>
+    </div>
+
+    <h2 id="salaires">Les salaires</h2>
+    <p>En France, en 2024 :</p>
+    <ul>
+      <li><strong>Junior</strong> (0-2 ans) → 32-42k€/an</li>
+      <li><strong>Confirmé</strong> (2-5 ans) → 42-55k€/an</li>
+      <li><strong>Senior</strong> (5+ ans) → 55-80k€/an</li>
+    </ul>
+    <p>Les salaires varient selon la ville, la technologie et l'entreprise.</p>
+
+    <h2 id="realite">La réalité du métier</h2>
+    <p>Ce qu'on ne te dit pas toujours :</p>
+    <ul>
+      <li>Tu vas passer beaucoup de temps à <strong>chercher des bugs</strong></li>
+      <li>La technologie évolue vite, tu <strong>apprends constamment</strong></li>
+      <li>Le travail en équipe est <strong>essentiel</strong></li>
+      <li>La communication compte autant que le code</li>
+    </ul>
+
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li>Plusieurs parcours mènent au métier de dev</li>
+        <li>Les compétences comptent plus que le diplôme</li>
+        <li>C'est un métier de formation continue</li>
+        <li>Les opportunités sont nombreuses</li>
+      </ul>
+    </div>
+  `,
 };
 
 interface Props {
