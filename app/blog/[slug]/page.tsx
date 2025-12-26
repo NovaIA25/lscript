@@ -38,46 +38,40 @@ export default async function ArticlePage({ params }: Props) {
   });
 
   return (
-    <div className="page-content">
+    <div className="page-content article-page-premium">
       <div className="container">
         <article>
           <header className="article-header">
-            <Link 
+            <Link
               href={`/categories/${article.category}`}
-              className="article-card-category"
-              style={{ marginBottom: '1rem', display: 'inline-block' }}
+              className="article-category-badge"
             >
               {article.category}
             </Link>
             <h1>{article.title}</h1>
-            <p style={{ marginTop: '1rem', color: 'var(--color-text-muted)' }}>
-              Publié le {formattedDate}
+            <p className="article-meta">
+              {formattedDate}
             </p>
           </header>
-          
-          <div 
+
+          <div
             className="article-content"
             dangerouslySetInnerHTML={{ __html: article.content || '' }}
           />
 
-          <div style={{ margin: '3rem 0' }}>
+          <div style={{ margin: 'var(--space-20) 0' }}>
             <AdInContent />
           </div>
         </article>
 
         {/* Navigation guidance */}
-        <div style={{ maxWidth: '65ch', margin: '0 auto' }}>
+        <div style={{ maxWidth: '65ch', margin: '0 auto var(--space-16)' }}>
           <NextSteps category={article.category} currentSlug={params.slug} />
         </div>
 
-        <div style={{ 
-          marginTop: '2rem', 
-          paddingTop: '2rem', 
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          textAlign: 'center'
-        }}>
-          <Link href="/blog" className="btn btn-secondary">
-            ← Retour aux articles
+        <div className="article-footer">
+          <Link href="/blog" className="btn-premium">
+            Voir tous les articles
           </Link>
         </div>
       </div>
