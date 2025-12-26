@@ -16,12 +16,27 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  // Initialize theme from data-theme attribute to prevent hydration mismatch
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== 'undefined') {
+      const attr = document.documentElement.getAttribute('data-theme');
+      return (attr === 'dark' || attr === 'light') ? attr : 'light';
+    }
+    return 'light';
+  });
 
+  const [mounted, setMounted] = useState(false);
+
+  // Sync with localStorage on mount
   useEffect(() => {
-    // Get initial theme from data-theme attribute (set by ThemeScript)
-    const initialTheme = document.documentElement.getAttribute('data-theme') as Theme;
-    if (initialTheme) {
+    setMounted(true);
+
+    // Ensure state matches what ThemeScript set
+    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const initialTheme = savedTheme || systemTheme;
+
+    if (initialTheme !== theme) {
       setTheme(initialTheme);
     }
   }, []);
