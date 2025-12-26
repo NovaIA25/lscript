@@ -11,13 +11,17 @@ Tu entends parler de "code", de "programmation", de "développement"... Mais con
 
 ## Programmer = donner des instructions
 
-Imagine que tu veuilles expliquer à quelqu'un comment faire un gâteau. Tu lui donnerais une liste d'étapes :
-
-1. Prends un bol
-2. Mets 200g de farine
-3. Ajoute 3 œufs
-4. Mélange bien
-5. Mets au four 30 minutes
+<Callout type="example">
+  <p><strong>Exemple concret</strong></p>
+  <p>Imagine que tu veuilles expliquer à quelqu'un comment faire un gâteau. Tu lui donnerais une liste d'étapes :</p>
+  <ol>
+    <li>Prends un bol</li>
+    <li>Mets 200g de farine</li>
+    <li>Ajoute 3 œufs</li>
+    <li>Mélange bien</li>
+    <li>Mets au four 30 minutes</li>
+  </ol>
+</Callout>
 
 **Programmer, c'est exactement ça** — mais pour un ordinateur.
 
@@ -37,21 +41,25 @@ Chaque langage a sa façon d'écrire les instructions, mais le principe reste le
 
 ## Ce que fait vraiment un développeur
 
-Un développeur, c'est quelqu'un qui :
-
-1. **Comprend un problème** — "Je veux que les utilisateurs puissent se connecter"
-2. **Réfléchit à une solution** — "Il faut un formulaire, une vérification..."
-3. **Écrit les instructions** — Le code
-4. **Teste** — Vérifie que ça marche
-5. **Améliore** — Corrige les bugs, optimise
+<Callout type="key-point" title="Les 5 étapes du développeur">
+  <p>Un développeur, c'est quelqu'un qui :</p>
+  <ol>
+    <li><strong>Comprend un problème</strong> — "Je veux que les utilisateurs puissent se connecter"</li>
+    <li><strong>Réfléchit à une solution</strong> — "Il faut un formulaire, une vérification..."</li>
+    <li><strong>Écrit les instructions</strong> — Le code</li>
+    <li><strong>Teste</strong> — Vérifie que ça marche</li>
+    <li><strong>Améliore</strong> — Corrige les bugs, optimise</li>
+  </ol>
+</Callout>
 
 Ce n'est pas magique. C'est de la logique et de la pratique.
 
 ## Tu peux apprendre
 
-Si tu sais suivre une recette, tu peux apprendre à programmer.
-
-Le plus dur, c'est de commencer. Mais une fois que tu as compris le principe, tout devient plus clair.
+<Callout type="tip" title="Tu peux y arriver">
+  <p>Si tu sais suivre une recette, tu peux apprendre à programmer.</p>
+  <p>Le plus dur, c'est de commencer. Mais une fois que tu as compris le principe, tout devient plus clair.</p>
+</Callout>
 
 ---
 

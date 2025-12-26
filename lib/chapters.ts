@@ -5,6 +5,7 @@ export interface Chapter {
   title: string;
   description: string;
   icon: string;
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
 }
 
 export const chapters: Chapter[] = [
@@ -14,6 +15,7 @@ export const chapters: Chapter[] = [
     title: 'Introduction',
     description: 'Bienvenue dans ce guide complet.',
     icon: '👋',
+    difficulty: 'beginner',
   },
   {
     id: 1,
@@ -21,6 +23,7 @@ export const chapters: Chapter[] = [
     title: "Qu'est-ce que programmer ?",
     description: 'Comprendre ce que signifie vraiment coder.',
     icon: '💻',
+    difficulty: 'beginner',
   },
   {
     id: 2,
@@ -28,6 +31,7 @@ export const chapters: Chapter[] = [
     title: 'Comment fonctionne un ordinateur ?',
     description: 'Ce qui se passe vraiment dans la machine.',
     icon: '🖥️',
+    difficulty: 'beginner',
   },
   {
     id: 3,
@@ -35,6 +39,7 @@ export const chapters: Chapter[] = [
     title: 'Comprendre le web',
     description: 'Navigateur, serveur, requêtes HTTP.',
     icon: '🌐',
+    difficulty: 'beginner',
   },
   {
     id: 4,
@@ -42,6 +47,7 @@ export const chapters: Chapter[] = [
     title: 'Frontend vs Backend',
     description: 'Les deux faces du développement.',
     icon: '⚡',
+    difficulty: 'intermediate',
   },
   {
     id: 5,
@@ -49,6 +55,7 @@ export const chapters: Chapter[] = [
     title: 'Le rôle de JavaScript',
     description: 'Le langage du web expliqué.',
     icon: '📜',
+    difficulty: 'intermediate',
   },
   {
     id: 6,
@@ -56,6 +63,7 @@ export const chapters: Chapter[] = [
     title: 'Les bases du backend',
     description: 'Serveurs, APIs et bases de données.',
     icon: '⚙️',
+    difficulty: 'intermediate',
   },
   {
     id: 7,
@@ -63,6 +71,7 @@ export const chapters: Chapter[] = [
     title: 'Le développement mobile',
     description: 'Créer des apps pour iOS et Android.',
     icon: '📱',
+    difficulty: 'intermediate',
   },
   {
     id: 8,
@@ -70,6 +79,7 @@ export const chapters: Chapter[] = [
     title: 'Le métier de développeur',
     description: 'Carrière, salaires et réalité du terrain.',
     icon: '🧭',
+    difficulty: 'beginner',
   },
 ];
 

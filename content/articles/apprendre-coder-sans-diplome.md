@@ -13,9 +13,10 @@ Tu n'as pas fait d'études en informatique. Est-ce que tu peux quand même deven
 
 ## Le mythe du génie informatique
 
-Il y a une idée reçue : pour coder, il faut être un génie des maths ou avoir commencé à 12 ans.
-
-C'est faux.
+<Callout type="warning" title="Idée reçue">
+  <p>Il y a une idée reçue : pour coder, il faut être un génie des maths ou avoir commencé à 12 ans.</p>
+  <p><strong>C'est faux.</strong></p>
+</Callout>
 
 La programmation, c'est avant tout :
 
@@ -51,11 +52,14 @@ Beaucoup de développeurs en poste aujourd'hui :
 - Viennent d'une reconversion
 - N'ont pas de diplôme en informatique
 
-Ce qui compte pour les recruteurs :
-
-1. Ce que tu sais faire (ton portfolio)
-2. Ta capacité à apprendre
-3. Ton attitude en équipe
+<Callout type="key-point" title="Ce qui compte vraiment">
+  <p>Ce qui compte pour les recruteurs :</p>
+  <ol>
+    <li>Ce que tu sais faire (ton portfolio)</li>
+    <li>Ta capacité à apprendre</li>
+    <li>Ton attitude en équipe</li>
+  </ol>
+</Callout>
 
 ## Le chemin réaliste
 
@@ -70,9 +74,10 @@ C'est un marathon, pas un sprint.
 
 ## Conclusion
 
-Le diplôme n'est pas obligatoire. Ce qui compte, c'est ce que tu sais faire et ta capacité à le prouver.
-
-Commence aujourd'hui, avance chaque jour, et tu y arriveras.
+<Callout type="summary">
+  <p>Le diplôme n'est pas obligatoire. Ce qui compte, c'est ce que tu sais faire et ta capacité à le prouver.</p>
+  <p><strong>Commence aujourd'hui, avance chaque jour, et tu y arriveras.</strong></p>
+</Callout>
 
 ---
 

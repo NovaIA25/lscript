@@ -19,15 +19,15 @@ interface BlogClientProps {
 
 const CATEGORIES = [
   { id: 'all', label: 'Tous les articles', icon: '📚' },
-  { id: 'Bases', label: 'Bases', icon: '🧱' },
-  { id: 'Web', label: 'Web', icon: '🌐' },
-  { id: 'Mobile', label: 'Mobile', icon: '📱' },
-  { id: 'Backend', label: 'Backend', icon: '⚙️' },
-  { id: 'Carrière', label: 'Carrière', icon: '💼' },
-  { id: 'Outils', label: 'Outils', icon: '🛠️' },
-  { id: 'Langages', label: 'Langages', icon: '💻' },
-  { id: 'Concepts', label: 'Concepts', icon: '🧠' },
-  { id: 'Orientation', label: 'Orientation', icon: '🧭' },
+  { id: 'bases', label: 'Bases', icon: '🧱' },
+  { id: 'web', label: 'Web', icon: '🌐' },
+  { id: 'mobile', label: 'Mobile', icon: '📱' },
+  { id: 'backend', label: 'Backend', icon: '⚙️' },
+  { id: 'carriere', label: 'Carrière', icon: '💼' },
+  { id: 'outils', label: 'Outils', icon: '🛠️' },
+  { id: 'langages', label: 'Langages', icon: '💻' },
+  { id: 'concepts', label: 'Concepts', icon: '🧠' },
+  { id: 'orientation', label: 'Orientation', icon: '🧭' },
 ];
 
 export default function BlogClient({ articles }: BlogClientProps) {

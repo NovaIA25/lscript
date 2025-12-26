@@ -172,6 +172,15 @@ export default function GuidePage() {
             {chapters.map((chapter, index) => {
               const isRead = isClient && isChapterRead(chapter.slug);
 
+              // Difficulty badge
+              const difficultyConfig = {
+                beginner: { label: 'Débutant', emoji: '🟢' },
+                intermediate: { label: 'Intermédiaire', emoji: '🟡' },
+                advanced: { label: 'Avancé', emoji: '🔴' },
+              };
+
+              const difficulty = chapter.difficulty && difficultyConfig[chapter.difficulty];
+
               return (
                 <motion.div key={chapter.slug} variants={itemVariants}>
                   <Link
@@ -188,6 +197,11 @@ export default function GuidePage() {
                     <div className="guide-chapter-content">
                       <h3>
                         {chapter.title}
+                        {difficulty && (
+                          <span className={`difficulty-badge difficulty-${chapter.difficulty}`}>
+                            {difficulty.emoji} {difficulty.label}
+                          </span>
+                        )}
                         {isRead && (
                           <span style={{
                             marginLeft: 'var(--space-2)',
