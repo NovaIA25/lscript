@@ -924,33 +924,94 @@ p {
   }
 }
 
-/* ---------- Guide Index (Sommaire) ---------- */
+/* ---------- Guide Index (Sommaire V2) ---------- */
 .guide-index {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
+  padding: var(--space-8) 0;
+}
+
+.guide-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.guide-title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  margin-bottom: 1rem;
+}
+
+.guide-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.guide-callout {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-lg);
+  margin: 2rem 0;
+}
+
+.guide-callout-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.guide-callout-content strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-success);
+}
+
+.guide-callout-content p {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.guide-chapters {
+  margin-top: 2rem;
 }
 
 .guide-chapter-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.25rem;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   background: var(--color-surface);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-lg);
-  margin-bottom: 1rem;
-  transition: all var(--transition-normal);
+  margin-bottom: 0.75rem;
+  transition: all var(--duration-normal) var(--ease-out);
 }
 
 .guide-chapter-card:hover {
+  background: var(--color-surface-hover);
   border-color: var(--color-accent);
   transform: translateX(4px);
+  box-shadow: var(--shadow-md);
 }
 
 .guide-chapter-number {
   width: 48px;
   height: 48px;
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #fb923c 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -958,14 +1019,45 @@ p {
   font-weight: 700;
   font-size: var(--text-lg);
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
-.guide-chapter-info h3 {
+.guide-chapter-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.guide-chapter-content h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
   margin-bottom: 0.25rem;
+  color: var(--color-text);
 }
 
-.guide-chapter-info p {
+.guide-chapter-content p {
   font-size: var(--text-sm);
+  color: var(--color-text-muted);
   margin: 0;
 }
+
+.guide-chapter-arrow {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.guide-chapter-card:hover .guide-chapter-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--color-accent);
+}
+
+/* Button Large */
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: var(--text-lg);
+}
+
 
