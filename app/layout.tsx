@@ -16,11 +16,24 @@ export const metadata: Metadata = {
   description: 'Découvre le développement web et mobile sans jargon technique. Articles simples, progressifs et gratuits pour débutants. Guide complet, visualisations 3D et parcours pédagogique. Commence maintenant.',
   keywords: ['apprendre à coder', 'développement web débutant', 'programmation pour débutants', 'apprendre programmation', 'javascript débutant', 'html css', 'développement mobile', 'reconversion développeur', 'cours développement gratuit'],
   authors: [{ name: 'Lscript' }],
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'Lscript',
     description: 'Apprends le développement web et mobile avec des explications simples. 100% gratuit, sans jargon, pour débutants.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Lscript - Apprends à coder gratuitement',
+      },
+    ],
   },
 };
 
