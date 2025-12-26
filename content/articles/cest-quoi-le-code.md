@@ -19,25 +19,32 @@ C'est une liste d'instructions, écrites dans un langage que l'ordinateur compre
 
 ## Un exemple concret
 
-<Callout type="example">
-  <p>Quand tu ouvres une application sur ton téléphone et que tu appuies sur un bouton, quelque part il y a du code qui dit :</p>
-  <blockquote>"Quand l'utilisateur appuie sur ce bouton, affiche cette page."</blockquote>
-  <p>C'est tout. Le code, ce sont des instructions.</p>
-</Callout>
+<div class="callout callout-example">
+  <div class="callout-icon">✨</div>
+  <div class="callout-content">
+    <p>Quand tu ouvres une application sur ton téléphone et que tu appuies sur un bouton, quelque part il y a du code qui dit :</p>
+    <blockquote>"Quand l'utilisateur appuie sur ce bouton, affiche cette page."</blockquote>
+    <p>C'est tout. Le code, ce sont des instructions.</p>
+  </div>
+</div>
 
 ## Pourquoi on parle de "langage" ?
 
 Parce que les ordinateurs ne comprennent pas le français. Ils ont leur propre façon de recevoir des instructions.
 
-<Callout type="info" title="Les principaux langages">
-  <p>Il existe plein de langages de programmation différents :</p>
-  <ul>
-    <li><strong>JavaScript</strong> — pour les sites web</li>
-    <li><strong>Python</strong> — pour l'analyse de données</li>
-    <li><strong>Swift</strong> — pour les apps iPhone</li>
-  </ul>
-  <p>Chaque langage a ses propres mots et sa propre façon d'écrire, mais le principe reste le même : donner des instructions.</p>
-</Callout>
+<div class="callout callout-info">
+  <div class="callout-icon">ℹ️</div>
+  <div class="callout-content">
+    <p><strong>Les principaux langages</strong></p>
+    <p>Il existe plein de langages de programmation différents :</p>
+    <ul>
+      <li><strong>JavaScript</strong> — pour les sites web</li>
+      <li><strong>Python</strong> — pour l'analyse de données</li>
+      <li><strong>Swift</strong> — pour les apps iPhone</li>
+    </ul>
+    <p>Chaque langage a ses propres mots et sa propre façon d'écrire, mais le principe reste le même : donner des instructions.</p>
+  </div>
+</div>
 
 ## Tu peux apprendre
 
