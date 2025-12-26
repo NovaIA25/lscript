@@ -3,6 +3,7 @@ title: "C'est quoi le code ? Explication simple"
 excerpt: "Tu n'as jamais codé et tu te demandes ce que c'est vraiment ? On t'explique avec des mots simples."
 category: bases
 date: "2024-12-26"
+tags: ["débutant", "programmation", "concepts"]
 ---
 
 # C'est quoi le code ? Explication simple

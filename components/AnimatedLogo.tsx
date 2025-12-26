@@ -66,6 +66,8 @@ export default function AnimatedLogo({ size = 'md', animate = true }: AnimatedLo
           fill="none"
           initial={animate ? 'hidden' : 'visible'}
           animate="visible"
+          role="img"
+          aria-label="Logo Lscript - Symboles de code avec brackets et slash"
         >
           {/* Code brackets */}
           <motion.path

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getCategoryGradient, getCategoryIcon } from '@/lib/categoryColors';
+import TagList from './TagList';
 
 interface Article {
   slug: string;
@@ -7,6 +8,8 @@ interface Article {
   excerpt: string;
   category: string;
   date: string;
+  tags?: string[];
+  readTime?: string;
 }
 
 interface ArticleCardProps {
@@ -21,9 +24,8 @@ export default function ArticleCard({ article, variant = 'default' }: ArticleCar
     year: 'numeric'
   });
 
-  // Estimation du temps de lecture (environ 200 mots/min)
-  // Moyenne d'un article : 600-800 mots = 3-4 min
-  const readingTime = '3-5 min';
+  // Use readTime from article or fallback
+  const readingTime = article.readTime || '3-5 min';
 
   // V2 : Gradient et icône par catégorie
   const gradient = getCategoryGradient(article.category);
@@ -49,6 +51,11 @@ export default function ArticleCard({ article, variant = 'default' }: ArticleCar
 
         {/* Extrait */}
         <p>{article.excerpt}</p>
+
+        {/* Tags */}
+        {article.tags && article.tags.length > 0 && (
+          <TagList tags={article.tags} variant="compact" />
+        )}
 
         {/* Footer (date + arrow) */}
         <div className="article-card-footer">

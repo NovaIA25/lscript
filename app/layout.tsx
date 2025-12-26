@@ -1,14 +1,17 @@
 import '@/styles/globals.css';
+import ThemeScript from '@/components/ThemeScript';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import StructuredData, { createWebsiteSchema } from '@/components/StructuredData';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.lscript.fr'),
   title: {
     default: 'Apprendre à coder simplement | Lscript — Débutants & reconversions',
     template: '%s | Lscript'
@@ -24,16 +27,34 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
+    url: 'https://www.lscript.fr',
     siteName: 'Lscript',
     description: 'Apprends le développement web et mobile avec des explications simples. 100% gratuit, sans jargon, pour débutants.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Lscript - Apprends à coder gratuitement',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lscript — Apprendre à coder simplement',
+    description: 'Apprends le développement web et mobile avec des explications simples. 100% gratuit.',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -46,6 +67,7 @@ export default function RootLayout({
 
   return (
     <html lang="fr">
+        <ThemeScript />
       <head>
         {/* Google Tag Manager */}
         <Script
@@ -85,14 +107,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <Header />
-        <main id="main-content" role="main">
-          {children}
-        </main>
-        <Footer />
-        <CookieConsent />
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider>
+          <Header />
+          <main id="main-content" role="main">
+            {children}
+          </main>
+          <Footer />
+          <CookieConsent />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

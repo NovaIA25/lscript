@@ -3,6 +3,7 @@ title: "C'est quoi une variable ?"
 excerpt: "Une variable, c'est une boîte avec une étiquette. On t'explique ce concept fondamental."
 category: bases
 date: "2024-12-25"
+tags: ["débutant", "programmation", "concepts", "variable", "fondamentaux"]
 ---
 
 # C'est quoi une variable ?

@@ -12,6 +12,8 @@ export interface Article {
   excerpt: string;
   category: string;
   date: string;
+  tags?: string[];
+  readTime?: string;
   content?: string;
 }
 
@@ -38,6 +40,8 @@ export async function getAllArticles(): Promise<Article[]> {
         excerpt: data.excerpt || '',
         category: data.category || 'bases',
         date: data.date || new Date().toISOString(),
+        tags: data.tags || [],
+        readTime: data.readTime || calculateReadTime(fileContents),
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
@@ -65,13 +69,45 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     excerpt: data.excerpt || '',
     category: data.category || 'bases',
     date: data.date || new Date().toISOString(),
+    tags: data.tags || [],
+    readTime: data.readTime || calculateReadTime(fileContents),
     content: processedContent.toString(),
   };
+}
+
+// Calculate read time based on word count
+function calculateReadTime(content: string): string {
+  const wordsPerMinute = 200;
+  const wordCount = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  return `${minutes} min`;
 }
 
 export async function getArticlesByCategory(category: string): Promise<Article[]> {
   const articles = await getAllArticles();
   return articles.filter((article) => article.category === category);
+}
+
+// Get all unique tags from articles
+export async function getAllTags(): Promise<{ tag: string; count: number }[]> {
+  const articles = await getAllArticles();
+  const tagMap = new Map<string, number>();
+
+  articles.forEach((article) => {
+    article.tags?.forEach((tag) => {
+      tagMap.set(tag, (tagMap.get(tag) || 0) + 1);
+    });
+  });
+
+  return Array.from(tagMap.entries())
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
+// Get articles by tag
+export async function getArticlesByTag(tag: string): Promise<Article[]> {
+  const articles = await getAllArticles();
+  return articles.filter((article) => article.tags?.includes(tag));
 }
 
 export function getAllCategories() {

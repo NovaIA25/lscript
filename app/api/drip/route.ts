@@ -30,13 +30,13 @@ const emailTemplates = {
             Par où commencer ?
           </h3>
           <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
-            <li><a href="https://lscript.fr/blog/cest-quoi-programmer" style="color: #ea580c;">C'est quoi programmer ?</a></li>
-            <li><a href="https://lscript.fr/guide" style="color: #ea580c;">Le guide complet pour débutants</a></li>
-            <li><a href="https://lscript.fr/visualisations" style="color: #ea580c;">Visualisations interactives</a></li>
+            <li><a href="https://www.lscript.fr/blog/cest-quoi-programmer" style="color: #ea580c;">C'est quoi programmer ?</a></li>
+            <li><a href="https://www.lscript.fr/guide" style="color: #ea580c;">Le guide complet pour débutants</a></li>
+            <li><a href="https://www.lscript.fr/visualisations" style="color: #ea580c;">Visualisations interactives</a></li>
           </ul>
         </div>
         
-        <a href="https://lscript.fr/guide" 
+        <a href="https://www.lscript.fr/guide" 
            style="display: inline-block; padding: 14px 28px; 
                   background: #ea580c; color: white; text-decoration: none; 
                   border-radius: 8px; font-weight: 600; font-size: 16px;">
@@ -74,7 +74,7 @@ const emailTemplates = {
         <div style="margin: 30px 0;">
           <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ea580c;">
             <h3 style="color: #1a1a1a; font-size: 18px; margin: 0 0 8px;">
-              <a href="https://lscript.fr/blog/comment-apprendre-a-coder-2025" style="color: #1a1a1a; text-decoration: none;">
+              <a href="https://www.lscript.fr/blog/comment-apprendre-a-coder-2025" style="color: #1a1a1a; text-decoration: none;">
                 1. Comment apprendre à coder en 2025
               </a>
             </h3>
@@ -85,7 +85,7 @@ const emailTemplates = {
 
           <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #2563eb;">
             <h3 style="color: #1a1a1a; font-size: 18px; margin: 0 0 8px;">
-              <a href="https://lscript.fr/blog/quel-langage-programmation-choisir-guide-2025" style="color: #1a1a1a; text-decoration: none;">
+              <a href="https://www.lscript.fr/blog/quel-langage-programmation-choisir-guide-2025" style="color: #1a1a1a; text-decoration: none;">
                 2. Quel langage choisir ?
               </a>
             </h3>
@@ -96,7 +96,7 @@ const emailTemplates = {
 
           <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; border-left: 4px solid #16a34a;">
             <h3 style="color: #1a1a1a; font-size: 18px; margin: 0 0 8px;">
-              <a href="https://lscript.fr/blog/creer-premier-site-web-tutoriel" style="color: #1a1a1a; text-decoration: none;">
+              <a href="https://www.lscript.fr/blog/creer-premier-site-web-tutoriel" style="color: #1a1a1a; text-decoration: none;">
                 3. Créer ton premier site web
               </a>
             </h3>
@@ -111,7 +111,7 @@ const emailTemplates = {
           C'est la clé pour vraiment progresser ! 💪
         </p>
         
-        <a href="https://lscript.fr/blog" 
+        <a href="https://www.lscript.fr/blog" 
            style="display: inline-block; padding: 14px 28px; 
                   background: #ea580c; color: white; text-decoration: none; 
                   border-radius: 8px; font-weight: 600; font-size: 16px; margin-top: 20px;">
@@ -124,7 +124,7 @@ const emailTemplates = {
         </p>
         
         <p style="color: #aaa; font-size: 12px; margin-top: 20px;">
-          Tu ne veux plus recevoir ces emails ? <a href="https://lscript.fr" style="color: #aaa;">Se désinscrire</a>
+          Tu ne veux plus recevoir ces emails ? <a href="https://www.lscript.fr" style="color: #aaa;">Se désinscrire</a>
         </p>
       </div>
     `,
@@ -170,7 +170,7 @@ const emailTemplates = {
           Pas besoin de plus au début.
         </p>
         
-        <a href="https://lscript.fr/visualisations" 
+        <a href="https://www.lscript.fr/visualisations" 
            style="display: inline-block; padding: 14px 28px; 
                   background: #ea580c; color: white; text-decoration: none; 
                   border-radius: 8px; font-weight: 600; font-size: 16px; margin-top: 20px;">

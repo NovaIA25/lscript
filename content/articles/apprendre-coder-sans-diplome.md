@@ -3,6 +3,7 @@ title: "Apprendre à coder sans diplôme : possible ?"
 excerpt: "Pas de diplôme en informatique ? Pas de problème. Voici la réalité."
 category: carriere
 date: "2024-12-26"
+tags: ["carrière", "reconversion", "débutant", "autodidacte", "motivation"]
 ---
 
 # Apprendre à coder sans diplôme : possible ?

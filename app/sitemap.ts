@@ -3,7 +3,7 @@ import { getAllArticles, getAllCategories } from '@/lib/articles';
 import { chapters } from '@/lib/chapters';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://lscript.fr';
+  const baseUrl = 'https://www.lscript.fr';
 
   // Pages statiques principales
   const staticPages = [
@@ -86,7 +86,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Visualisations
   const visualizations = [
     { slug: 'comment-fonctionne-le-web' },
-    // Add more as they become ready
+    { slug: 'frontend-backend' },
+    { slug: 'cest-quoi-une-api' },
+    { slug: 'base-de-donnees-crud' },
   ];
   const visualizationPages = visualizations.map((viz) => ({
     url: `${baseUrl}/visualisations/${viz.slug}`,

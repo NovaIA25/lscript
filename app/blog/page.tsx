@@ -7,8 +7,12 @@ export const metadata: Metadata = {
   description: 'Plus de 30 articles gratuits pour apprendre à coder : développement web, mobile, JavaScript, Python. Explications simples, sans jargon, pour débutants.',
 };
 
-export default async function BlogPage() {
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams?: { tag?: string; q?: string };
+}) {
   const articles = await getAllArticles();
 
-  return <BlogClient articles={articles} />;
+  return <BlogClient articles={articles} searchParams={searchParams} />;
 }

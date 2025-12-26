@@ -208,6 +208,9 @@ export default function Footer() {
               <Link href="/confidentialite" style={{ color: 'var(--color-text-muted)' }}>
                 Confidentialité
               </Link>
+              <Link href="/cgu" style={{ color: 'var(--color-text-muted)' }}>
+                CGU
+              </Link>
             </div>
           </div>
         </div>

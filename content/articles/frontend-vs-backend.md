@@ -3,6 +3,7 @@ title: "Frontend vs Backend : quelle différence ?"
 excerpt: "Tu entends ces mots partout mais tu ne sais pas ce que ça veut dire ? On t'explique."
 category: backend
 date: "2024-12-26"
+tags: ["web", "backend", "frontend", "architecture", "concepts"]
 ---
 
 # Frontend vs Backend : quelle différence ?

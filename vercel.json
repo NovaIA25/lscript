@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lscript.fr"
+        }
+      ],
+      "destination": "https://www.lscript.fr/:path*",
+      "permanent": true,
+      "statusCode": 301
+    }
+  ]
+}

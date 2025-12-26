@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AnimatedLogo from './AnimatedLogo';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const pathname = usePathname();
@@ -41,21 +42,32 @@ export default function Header() {
             <Link href="/a-propos" className={isActive('/a-propos') ? 'nav-active' : ''}>
               À propos
             </Link>
+
+            {/* Theme Toggle (Desktop) */}
+            <ThemeToggle />
           </nav>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-            aria-expanded={isMenuOpen}
-          >
-            <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
+          {/* Mobile Controls */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+            {/* Theme Toggle (Mobile) */}
+            <div className="theme-toggle-mobile">
+              <ThemeToggle />
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={isMenuOpen}
+            >
+              <span className={`hamburger ${isMenuOpen ? 'hamburger-open' : ''}`}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation Overlay */}

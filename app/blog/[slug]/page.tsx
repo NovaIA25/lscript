@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import NextSteps from '@/components/NextSteps';
 import { AdInContent } from '@/components/AdUnit';
+import StructuredData, { createArticleSchema, createBreadcrumbSchema } from '@/components/StructuredData';
 
 interface Props {
   params: { slug: string };
@@ -37,9 +38,28 @@ export default async function ArticlePage({ params }: Props) {
     year: 'numeric'
   });
 
+  // Create structured data for SEO
+  const articleSchema = createArticleSchema({
+    title: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    dateModified: article.date,
+    slug: params.slug,
+  });
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Accueil', url: 'https://www.lscript.fr' },
+    { name: 'Articles', url: 'https://www.lscript.fr/blog' },
+    { name: article.title, url: `https://www.lscript.fr/blog/${params.slug}` },
+  ]);
+
   return (
-    <div className="page-content article-page-premium" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
-      <div className="container" style={{ maxWidth: '800px' }}>
+    <>
+      <StructuredData data={articleSchema} />
+      <StructuredData data={breadcrumbSchema} />
+
+      <div className="page-content article-page-premium" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
         <article>
           <header className="article-header" style={{ marginBottom: 'var(--space-16)' }}>
             <Link
@@ -77,6 +97,7 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

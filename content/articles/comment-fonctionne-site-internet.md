@@ -3,6 +3,7 @@ title: "Comment fonctionne un site internet ?"
 excerpt: "Tu tapes une URL et une page s'affiche. Mais que se passe-t-il vraiment ?"
 category: web
 date: "2024-12-26"
+tags: ["web", "concepts", "internet", "débutant", "architecture"]
 ---
 
 # Comment fonctionne un site internet ?

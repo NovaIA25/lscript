@@ -3,6 +3,7 @@ title: "C'est quoi programmer ?"
 excerpt: "Programmer, c'est donner des instructions à un ordinateur. On t'explique ça simplement."
 category: bases
 date: "2024-12-26"
+tags: ["débutant", "programmation", "concepts", "introduction"]
 ---
 
 # C'est quoi programmer ?

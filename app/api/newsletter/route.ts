@@ -46,7 +46,7 @@ export async function POST(request: Request) {
               On publie du contenu pour apprendre le développement web et mobile, 
               sans jargon, adapté aux débutants.
             </p>
-            <a href="https://lscript.fr/guide" 
+            <a href="https://www.lscript.fr/guide" 
                style="display: inline-block; margin-top: 20px; padding: 12px 24px; 
                       background: #ea580c; color: white; text-decoration: none; 
                       border-radius: 8px; font-weight: 600;">

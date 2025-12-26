@@ -3,6 +3,7 @@ title: "Par où commencer quand on est débutant ?"
 excerpt: "Trop de choix, trop de ressources. On te donne un chemin clair."
 category: carriere
 date: "2024-12-26"
+tags: ["débutant", "roadmap", "orientation", "commencer", "conseils"]
 ---
 
 # Par où commencer quand on est débutant ?

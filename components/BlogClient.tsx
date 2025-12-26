@@ -10,11 +10,13 @@ interface Article {
   date: string;
   category: string;
   excerpt: string;
+  tags?: string[];
   readingTime?: string;
 }
 
 interface BlogClientProps {
   articles: Article[];
+  searchParams?: { tag?: string; q?: string };
 }
 
 const CATEGORIES = [
@@ -30,9 +32,10 @@ const CATEGORIES = [
   { id: 'orientation', label: 'Orientation', icon: '🧭' },
 ];
 
-export default function BlogClient({ articles }: BlogClientProps) {
+export default function BlogClient({ articles, searchParams }: BlogClientProps) {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(searchParams?.q || '');
+  const [selectedTag, setSelectedTag] = useState<string | null>(searchParams?.tag || null);
 
   // Compter les articles par catégorie
   const categoryCounts = useMemo(() => {
@@ -50,6 +53,13 @@ export default function BlogClient({ articles }: BlogClientProps) {
   const filteredArticles = useMemo(() => {
     let filtered = articles;
 
+    // Filtre par tag
+    if (selectedTag) {
+      filtered = filtered.filter(article =>
+        article.tags?.includes(selectedTag)
+      );
+    }
+
     // Filtre par catégorie
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(article => article.category === selectedCategory);
@@ -65,7 +75,7 @@ export default function BlogClient({ articles }: BlogClientProps) {
     }
 
     return filtered;
-  }, [articles, selectedCategory, searchQuery]);
+  }, [articles, selectedCategory, searchQuery, selectedTag]);
 
   return (
     <div className="page-content" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
@@ -102,6 +112,51 @@ export default function BlogClient({ articles }: BlogClientProps) {
         </div>
 
         <BeginnerCallout />
+
+        {/* Active Tag Filter Badge */}
+        {selectedTag && (
+          <div style={{
+            maxWidth: '600px',
+            margin: '0 auto var(--space-4)',
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 'var(--space-2)',
+              padding: 'var(--space-2) var(--space-4)',
+              background: 'var(--color-accent-subtle)',
+              border: '2px solid var(--color-accent)',
+              borderRadius: 'var(--radius-full)',
+              fontSize: 'var(--text-sm)',
+              fontWeight: '500',
+            }}>
+              <span>Filtré par: #{selectedTag}</span>
+              <button
+                onClick={() => setSelectedTag(null)}
+                aria-label="Supprimer le filtre de tag"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '20px',
+                  height: '20px',
+                  padding: 0,
+                  background: 'var(--color-accent)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  lineHeight: 1,
+                }}
+              >
+                ×
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Premium Search Bar */}
         <div style={{
@@ -209,8 +264,9 @@ export default function BlogClient({ articles }: BlogClientProps) {
             ) : (
               <>
                 {filteredArticles.length} article{filteredArticles.length > 1 ? 's' : ''}
+                {selectedTag && ` avec le tag #${selectedTag}`}
                 {searchQuery && ` pour "${searchQuery}"`}
-                {selectedCategory !== 'all' && !searchQuery && ` dans ${CATEGORIES.find(c => c.id === selectedCategory)?.label}`}
+                {selectedCategory !== 'all' && !searchQuery && !selectedTag && ` dans ${CATEGORIES.find(c => c.id === selectedCategory)?.label}`}
               </>
             )}
           </p>
@@ -228,11 +284,12 @@ export default function BlogClient({ articles }: BlogClientProps) {
                 : 'Explore les autres catégories pour découvrir plus d\'articles.'
               }
             </p>
-            {(searchQuery || selectedCategory !== 'all') && (
+            {(searchQuery || selectedCategory !== 'all' || selectedTag) && (
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('all');
+                  setSelectedTag(null);
                 }}
                 style={{
                   marginTop: 'var(--space-4)',

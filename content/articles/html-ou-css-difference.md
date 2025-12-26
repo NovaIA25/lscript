@@ -3,6 +3,7 @@ title: "HTML ou CSS : quelle différence ?"
 excerpt: "Ces deux mots reviennent tout le temps. Mais c'est quoi exactement, et quelle est la différence ?"
 category: web
 date: "2024-12-24"
+tags: ["web", "HTML", "CSS", "débutant", "frontend"]
 ---
 
 # HTML ou CSS : quelle différence ?
