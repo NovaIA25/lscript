@@ -13,8 +13,8 @@ export default function MentionsLegalesPage() {
           
           <h2>Éditeur du site</h2>
           <p>
-            Le site lscript.fr est édité par [Votre nom ou raison sociale].<br />
-            Adresse : [Votre adresse]<br />
+            Le site lscript.fr est édité par Sully (LSPRO).<br />
+            Adresse : Lille, France<br />
             Email : contact@lscript.fr
           </p>
 

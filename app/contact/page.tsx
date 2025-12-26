@@ -17,7 +17,7 @@ export default function ContactPage() {
           </p>
 
           <form 
-            action="https://formspree.io/f/your-form-id" 
+            action="https://formspree.io/f/xqekawgy" 
             method="POST"
             style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
           >
