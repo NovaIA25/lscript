@@ -52,59 +52,26 @@ export default async function HomePage() {
       <StructuredData data={createWebsiteSchema()} />
       <StructuredData data={createFAQSchema(faqs)} />
 
-      {/* Hero Section - SEO Optimized */}
-      <section className="hero">
-        {/* V2: Grid pattern background */}
-        <div className="hero-grid-pattern" />
+      {/* Hero Section - Apple Premium */}
+      <section className="hero-premium">
+        <div className="container">
+          <div className="hero-premium-content">
+            <h1 className="hero-premium-title">
+              Apprendre à coder.
+              <br />
+              Simplement.
+            </h1>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="hero-content">
-            <div className="badge badge-accent mb-6 inline-flex animate-fade-in text-sm font-medium shadow-sm hover:shadow-md transition-all">
-              🎓 100% gratuit · Sans inscription
-            </div>
-            <h1>Apprendre à coder en 2025 : le guide pour débutants</h1>
-            
-            {/* SEO Intro Text - 150+ words */}
-            <div className="hero-lead">
-              <p>
-                Tu veux <strong>apprendre à coder</strong> mais tu ne sais pas par où commencer ? 
-                Bienvenue sur Lscript, le blog qui t'explique le <strong>développement web et mobile</strong> 
-                sans jargon, sans prérequis, et à ton rythme.
-              </p>
-              <p style={{ marginTop: 'var(--space-4)' }}>
-                Ici, pas de formations à 2000€ ni de promesses irréalistes. Juste des articles clairs, 
-                écrits pour les <strong>débutants absolus</strong> qui veulent comprendre comment 
-                fonctionnent les sites web, les applications mobiles, et le code en général.
-              </p>
-              <div style={{ 
-                background: 'var(--color-bg-subtle)', 
-                padding: 'var(--space-4)', 
-                borderRadius: 'var(--radius-lg)',
-                marginTop: 'var(--space-6)',
-                textAlign: 'left',
-                maxWidth: '500px',
-                margin: 'var(--space-6) auto 0'
-              }}>
-                <p style={{ fontWeight: 'var(--weight-semibold)', marginBottom: 'var(--space-2)', color: 'var(--color-text)' }}>
-                  Tu vas apprendre :
-                </p>
-                <ul style={{ 
-                  listStyle: 'none', 
-                  padding: 0, 
-                  margin: 0,
-                  fontSize: 'var(--text-base)',
-                  color: 'var(--color-text-secondary)'
-                }}>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>✓ Ce qu'est vraiment la programmation (sans mots compliqués)</li>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>✓ Comment créer ton premier site web</li>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>✓ Les bases du développement mobile</li>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>✓ Quel langage choisir pour débuter</li>
-                  <li>✓ Comment progresser étape par étape</li>
-                </ul>
-              </div>
-              <p style={{ marginTop: 'var(--space-6)', fontSize: 'var(--text-lg)' }}>
-                <strong>Prêt à te lancer ?</strong> Commence par la section ci-dessous. 👇
-              </p>
+            <p className="hero-premium-subtitle">
+              Des explications claires pour les débutants.
+              <br />
+              Sans jargon. Sans prérequis. Gratuit.
+            </p>
+
+            <div className="hero-premium-cta">
+              <Link href="/commencer" className="btn-premium">
+                Commencer maintenant
+              </Link>
             </div>
           </div>
         </div>

@@ -521,6 +521,119 @@ pre code {
 }
 
 /* ========================================
+   HERO PREMIUM — Apple-Level Design
+   ======================================== */
+
+.hero-premium {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-20) 0;
+}
+
+.hero-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(234, 88, 12, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(15, 23, 42, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-premium-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.hero-premium-title {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  margin: 0 0 var(--space-8);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero-premium-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: 0 auto var(--space-12);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.hero-premium-cta {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-5) var(--space-10);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-text);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.btn-premium:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+}
+
+/* Responsive Hero Premium */
+@media (max-width: 768px) {
+  .hero-premium {
+    min-height: 85vh;
+    padding: var(--space-16) 0;
+  }
+
+  .hero-premium-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-premium-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-8);
+  }
+
+  .btn-premium {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+  }
+}
+
+/* ========================================
    ARTICLE CARDS V4 — Premium Content Cards
    ======================================== */
 
