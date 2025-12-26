@@ -80,7 +80,7 @@ export default function VisualisationsPage() {
           </p>
 
           {/* Why Visual Learning */}
-          <div style={{
+          <div className="viz-features-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 'var(--space-8)',

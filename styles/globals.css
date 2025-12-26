@@ -3305,10 +3305,11 @@ img {
 
 /* Hero features grid on index page */
 @media (max-width: 640px) {
-  .page-content div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: var(--space-4) !important;
+  /* Stack the Concret/Rapide/Mémorable grid */
+  .viz-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+    padding: var(--space-6) !important;
   }
 
   /* Visualization cards grid */
