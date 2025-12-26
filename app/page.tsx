@@ -37,7 +37,7 @@ export default async function HomePage() {
       <StructuredData data={createFAQSchema(faqs)} />
 
       {/* Hero Section - Apple Premium */}
-      <section className="hero-premium">
+      <section className="hero-premium hero-accent" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <div className="hero-premium-content">
             <h1 className="hero-premium-title">
@@ -45,6 +45,8 @@ export default async function HomePage() {
               <br />
               Simplement.
             </h1>
+
+            <div className="section-separator" />
 
             <p className="hero-premium-subtitle">
               Des explications claires pour les débutants.

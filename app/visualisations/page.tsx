@@ -64,6 +64,8 @@ export default function VisualisationsPage() {
             Visualisations interactives
           </h1>
 
+          <div className="section-separator" />
+
           <p style={{
             fontSize: 'var(--text-xl)',
             color: 'var(--color-text-secondary)',
@@ -124,9 +126,10 @@ export default function VisualisationsPage() {
             {visualizations.map((viz) => (
               <div
                 key={viz.slug}
-                className="card-premium"
+                className="card-premium corner-accent"
                 style={{
                   opacity: viz.ready ? 1 : 0.7,
+                  position: 'relative',
                 }}
               >
                 {/* Preview Area */}

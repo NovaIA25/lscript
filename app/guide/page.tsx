@@ -57,6 +57,7 @@ export default function GuidePage() {
           >
             <span className="guide-badge" style={{ marginBottom: 'var(--space-8)' }}>📖 Guide complet</span>
             <h1 className="guide-title" style={{ marginBottom: 'var(--space-6)' }}>Le Guide du Développement</h1>
+            <div className="section-separator" />
             <p className="guide-subtitle" style={{
               maxWidth: '700px',
               margin: '0 auto',

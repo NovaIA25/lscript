@@ -181,6 +181,11 @@ body {
   line-height: var(--leading-relaxed);
   color: var(--color-text);
   background: var(--color-bg);
+  /* Subtle background pattern for visual identity */
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(234, 88, 12, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
 /* ========================================
@@ -2420,6 +2425,101 @@ button[aria-label]:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ========================================
+   VISUAL IDENTITY & DECORATIVE ELEMENTS
+   ======================================== */
+
+/* Decorative gradient accent for hero sections */
+.hero-accent::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section decorative separator */
+.section-separator {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  border-radius: var(--radius-full);
+  margin: var(--space-8) auto;
+}
+
+/* Decorative dots pattern */
+.dots-pattern {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Card with subtle glow effect */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(249, 115, 22, 0.05) 100%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Accent border decoration */
+.accent-border-top {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  border-image-slice: 1;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Decorative corner accent */
+.corner-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(234, 88, 12, 0.03) 100%);
+  border-radius: 0 var(--radius-xl) 0 var(--radius-xl);
+  pointer-events: none;
 }
 
 /* Amélioration des transitions de page */
