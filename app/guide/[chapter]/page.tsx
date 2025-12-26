@@ -4,10 +4,10 @@ import { chapters, getChapterBySlug, getAdjacentChapters } from '@/lib/chapters'
 import ChapterNav from '@/components/ChapterNav';
 import FloatingTOC from '@/components/FloatingTOC';
 
-// Chapter content (in a real app, this would come from MDX files)
+// Chapter content (SEO-optimized long-form articles)
 const chapterContent: Record<string, string> = {
   introduction: `
-    <h2>Bienvenue dans ce guide</h2>
+    <h2 id="bienvenue">Bienvenue dans ce guide</h2>
     <p>
       Tu veux apprendre à coder, mais tu ne sais pas par où commencer. 
       Tu as essayé des tutoriels, mais tu te retrouves à copier-coller sans comprendre.
@@ -21,7 +21,7 @@ const chapterContent: Record<string, string> = {
       progressive, du monde du développement informatique.
     </p>
 
-    <h2>Ce que tu vas apprendre</h2>
+    <h2 id="ce-que-tu-vas-apprendre">Ce que tu vas apprendre</h2>
     <p>En lisant ce guide du début à la fin, tu comprendras :</p>
     <ul>
       <li>Ce que signifie vraiment "programmer"</li>
@@ -33,7 +33,7 @@ const chapterContent: Record<string, string> = {
       <li>Comment devenir développeur dans la vraie vie</li>
     </ul>
 
-    <h2>Comment lire ce guide</h2>
+    <h2 id="comment-lire">Comment lire ce guide</h2>
     <p>
       Ce guide est conçu pour être lu <strong>dans l'ordre</strong>. 
       Chaque chapitre s'appuie sur le précédent.
@@ -47,65 +47,250 @@ const chapterContent: Record<string, string> = {
     </p>
   `,
   programmer: `
-    <h2>Programmer = donner des instructions</h2>
+    <p class="article-lead">
+      "Programmer", "coder", "développer"... Ces mots peuvent sembler intimidants quand on débute. 
+      Pourtant, le concept de base est d'une simplicité déconcertante. 
+      Dans ce chapitre, on va démystifier tout ça ensemble.
+    </p>
+
+    <h2 id="definition">C'est quoi programmer, concrètement ?</h2>
     <p>
-      Imagine que tu veuilles expliquer à quelqu'un comment faire un gâteau. 
-      Tu lui donnerais une liste d'étapes précises :
+      <strong>Programmer, c'est donner des instructions à un ordinateur.</strong>
+    </p>
+    <p>
+      Imagine que tu veuilles expliquer à quelqu'un comment faire un gâteau au chocolat. 
+      Tu lui donnerais une liste d'étapes précises, dans un ordre logique :
     </p>
     <ol>
-      <li>Prends un bol</li>
-      <li>Mets 200g de farine</li>
+      <li>Prends un grand bol</li>
+      <li>Mets 200 grammes de farine</li>
       <li>Ajoute 3 œufs</li>
-      <li>Mélange bien</li>
-      <li>Mets au four 30 minutes</li>
+      <li>Verse 150 grammes de sucre</li>
+      <li>Fais fondre 100 grammes de chocolat</li>
+      <li>Mélange le tout</li>
+      <li>Verse dans un moule</li>
+      <li>Mets au four à 180°C pendant 30 minutes</li>
     </ol>
     <p>
-      <strong>Programmer, c'est exactement ça</strong> — mais pour un ordinateur.
+      <strong>Programmer, c'est exactement ça</strong> — mais au lieu de parler à un humain, 
+      tu parles à une machine.
     </p>
     <p>
-      Tu écris une liste d'instructions dans un langage que la machine comprend, 
-      et elle les exécute une par une, dans l'ordre.
+      La différence ? Un humain peut improviser s'il manque un ingrédient. 
+      Un ordinateur, lui, fera <em>exactement</em> ce que tu lui dis. Ni plus, ni moins.
     </p>
 
-    <h2>Pourquoi on dit "code" ?</h2>
-    <p>
-      Les ordinateurs ne comprennent pas le français. 
-      Ils ont besoin qu'on leur parle dans un langage spécial, 
-      qu'on appelle un <strong>langage de programmation</strong>.
-    </p>
-    <p>Il en existe beaucoup :</p>
-    <ul>
-      <li><strong>JavaScript</strong> — pour les sites web</li>
-      <li><strong>Python</strong> — pour la science et l'automatisation</li>
-      <li><strong>Swift</strong> — pour les apps iPhone</li>
-    </ul>
-    <p>
-      Chaque langage a sa façon d'écrire les instructions, 
-      mais le principe reste toujours le même.
-    </p>
-
-    <h2>Ce que fait vraiment un développeur</h2>
-    <p>Un développeur, c'est quelqu'un qui :</p>
-    <ol>
-      <li><strong>Comprend un problème</strong> — "Je veux que les utilisateurs puissent se connecter"</li>
-      <li><strong>Réfléchit à une solution</strong> — "Il faut un formulaire, une vérification..."</li>
-      <li><strong>Écrit les instructions</strong> — Le fameux "code"</li>
-      <li><strong>Teste</strong> — Vérifie que ça marche</li>
-      <li><strong>Améliore</strong> — Corrige les bugs, optimise</li>
-    </ol>
-    <p>
-      Ce n'est pas magique. C'est de la logique et de la pratique.
-    </p>
-
-    <h2>À retenir</h2>
-    <div class="callout callout-summary">
-      <div class="callout-title">🧭 En résumé</div>
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 À retenir</div>
       <p>
-        Programmer = écrire des instructions pour un ordinateur.
-        Un développeur résout des problèmes en écrivant du code.
-        Il n'y a rien de magique, juste de la logique.
+        Un programme, c'est une recette pour ordinateur. 
+        Tu écris les étapes, et la machine les exécute dans l'ordre.
       </p>
     </div>
+
+    <h2 id="pourquoi-code">Pourquoi on dit "code" ?</h2>
+    <p>
+      Les ordinateurs ne comprennent pas le français, ni l'anglais, ni aucune langue humaine.
+    </p>
+    <p>
+      Pour leur parler, on utilise des <strong>langages de programmation</strong> — 
+      des langages spéciaux, avec leurs propres règles de grammaire et de syntaxe.
+    </p>
+    <p>
+      On appelle ça du "code" parce que c'est comme un langage codé : 
+      il a une logique précise que seuls ceux qui l'ont appris peuvent lire et écrire.
+    </p>
+
+    <h3 id="exemples-langages">Les langages les plus courants</h3>
+    <p>Il existe des centaines de langages de programmation. Voici les plus utilisés :</p>
+    
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>Langage</th>
+          <th>Utilisé pour</th>
+          <th>Exemple d'usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>JavaScript</strong></td>
+          <td>Sites web</td>
+          <td>Animer un bouton, charger des données</td>
+        </tr>
+        <tr>
+          <td><strong>Python</strong></td>
+          <td>Science, automatisation</td>
+          <td>Analyser des données, créer des bots</td>
+        </tr>
+        <tr>
+          <td><strong>Swift</strong></td>
+          <td>Applications iPhone</td>
+          <td>Créer une app iOS</td>
+        </tr>
+        <tr>
+          <td><strong>Java</strong></td>
+          <td>Applications Android</td>
+          <td>Créer une app Android</td>
+        </tr>
+        <tr>
+          <td><strong>PHP</strong></td>
+          <td>Sites web (serveur)</td>
+          <td>WordPress, Symfony</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong>Bonne nouvelle :</strong> tu n'as pas besoin de tous les apprendre. 
+      En maîtriser un ou deux suffit pour la plupart des projets.
+    </p>
+
+    <h2 id="exemple-concret">Un exemple de code concret</h2>
+    <p>
+      Voici un exemple simple en JavaScript. Ce code affiche "Bonjour !" à l'écran :
+    </p>
+    <pre><code>console.log("Bonjour !");</code></pre>
+    <p>
+      C'est tout. Une seule ligne. Et pourtant, c'est déjà du code.
+    </p>
+    <p>
+      Décortiquons :
+    </p>
+    <ul>
+      <li><code>console.log</code> → une instruction qui dit "affiche quelque chose"</li>
+      <li><code>("Bonjour !")</code> → le texte à afficher</li>
+      <li><code>;</code> → le point-virgule indique la fin de l'instruction</li>
+    </ul>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ Erreur fréquente</div>
+      <p>
+        Beaucoup de débutants pensent que programmer = écrire des tonnes de code compliqué. 
+        En réalité, même les logiciels les plus complexes sont composés de milliers de petites instructions simples.
+      </p>
+    </div>
+
+    <h2 id="ce-que-fait-developpeur">Ce que fait vraiment un développeur</h2>
+    <p>
+      Un développeur, ce n'est pas quelqu'un qui tape du code à toute vitesse sur un écran noir 
+      (même si ça arrive parfois).
+    </p>
+    <p>
+      En réalité, un développeur passe la majorité de son temps à :
+    </p>
+
+    <h3 id="comprendre-probleme">1. Comprendre le problème</h3>
+    <p>
+      Avant d'écrire une seule ligne de code, il faut comprendre ce qu'on veut accomplir.
+    </p>
+    <p>Exemple : "Je veux que les utilisateurs puissent se connecter à mon site."</p>
+    <p>Cette phrase simple cache beaucoup de questions :</p>
+    <ul>
+      <li>Comment s'identifient-ils ? Email ? Pseudo ?</li>
+      <li>Où sont stockés les mots de passe ?</li>
+      <li>Que se passe-t-il s'ils oublient leur mot de passe ?</li>
+    </ul>
+
+    <h3 id="concevoir-solution">2. Concevoir une solution</h3>
+    <p>
+      Une fois le problème bien compris, le développeur imagine comment le résoudre.
+    </p>
+    <p>
+      C'est comme dessiner le plan d'une maison avant de poser les briques. 
+      On ne code pas tout de suite — on réfléchit d'abord.
+    </p>
+
+    <h3 id="ecrire-code">3. Écrire le code</h3>
+    <p>
+      C'est la partie visible du travail. Le développeur traduit sa solution en instructions 
+      que l'ordinateur peut comprendre.
+    </p>
+
+    <h3 id="tester">4. Tester</h3>
+    <p>
+      "Est-ce que ça marche ?" Le développeur vérifie que son code fonctionne correctement, 
+      dans tous les cas possibles.
+    </p>
+    <p>
+      Que se passe-t-il si l'utilisateur entre un mauvais mot de passe ? 
+      Si le réseau coupe ? Si quelqu'un tente de pirater le système ?
+    </p>
+
+    <h3 id="ameliorer">5. Améliorer</h3>
+    <p>
+      Le premier code qui fonctionne est rarement le meilleur. 
+      Le développeur revient souvent sur son travail pour le rendre plus rapide, 
+      plus clair, plus sécurisé.
+    </p>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">💡 Réalité du métier</div>
+      <p>
+        Les développeurs passent environ 30% de leur temps à écrire du code, 
+        et 70% à réfléchir, lire du code existant, et corriger des bugs.
+      </p>
+    </div>
+
+    <h2 id="idees-recues">Les idées reçues sur la programmation</h2>
+
+    <h3 id="mythe-maths">"Il faut être fort en maths"</h3>
+    <p>
+      <strong>Faux.</strong> La majorité du code ne nécessite pas de mathématiques avancées. 
+      Savoir compter et faire de la logique de base suffit pour 90% des situations.
+    </p>
+    <p>
+      Bien sûr, certains domaines (intelligence artificielle, jeux vidéo 3D, cryptographie) 
+      demandent des maths poussées. Mais ce n'est pas la norme.
+    </p>
+
+    <h3 id="mythe-genie">"Il faut être un génie"</h3>
+    <p>
+      <strong>Faux.</strong> La programmation s'apprend. Comme le piano ou la cuisine. 
+      Les meilleurs développeurs ne sont pas nés avec un don — ils ont pratiqué.
+    </p>
+
+    <h3 id="mythe-age">"C'est trop tard pour apprendre"</h3>
+    <p>
+      <strong>Faux.</strong> Des gens apprennent à coder à 40, 50, 60 ans et réussissent 
+      à se reconvertir ou à créer leurs propres projets.
+    </p>
+
+    <h3 id="mythe-vitesse">"Un bon développeur code vite"</h3>
+    <p>
+      <strong>Faux.</strong> Un bon développeur écrit du code qui fonctionne, 
+      qui est facile à comprendre, et qui ne plante pas. La vitesse vient avec l'expérience, 
+      mais ce n'est jamais le critère principal.
+    </p>
+
+    <h2 id="premier-pas">Par où commencer ?</h2>
+    <p>
+      Si tu veux apprendre à programmer, voici les étapes recommandées :
+    </p>
+    <ol>
+      <li><strong>Comprends les bases</strong> — C'est ce que tu fais en lisant ce guide</li>
+      <li><strong>Choisis un langage</strong> — JavaScript est idéal pour débuter (on peut tout faire avec)</li>
+      <li><strong>Pratique quotidiennement</strong> — Même 30 minutes par jour, c'est suffisant</li>
+      <li><strong>Fais des projets</strong> — Crée quelque chose qui t'intéresse vraiment</li>
+      <li><strong>Ne te décourage pas</strong> — Tout le monde galère au début. C'est normal.</li>
+    </ol>
+
+    <h2 id="resume">En résumé</h2>
+    <div class="callout callout-summary">
+      <div class="callout-title">🧭 Ce qu'il faut retenir</div>
+      <ul>
+        <li><strong>Programmer</strong> = écrire des instructions pour un ordinateur</li>
+        <li>Un <strong>langage de programmation</strong> = la "langue" dans laquelle on écrit ces instructions</li>
+        <li>Le travail d'un <strong>développeur</strong> = comprendre un problème, concevoir une solution, l'écrire en code, tester, améliorer</li>
+        <li>Pas besoin d'être un <strong>génie en maths</strong> — de la logique et de la pratique suffisent</li>
+        <li>Le plus important = <strong>comprendre</strong>, pas aller vite</li>
+      </ul>
+    </div>
+
+    <p>
+      Tu sais maintenant ce que signifie "programmer". 
+      Dans le prochain chapitre, on va voir comment fonctionne réellement un ordinateur — 
+    </p>
   `,
 };
 
