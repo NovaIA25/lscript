@@ -12,90 +12,91 @@
   --color-bg-muted: #f1f5f9;
   --color-surface: #ffffff;
   --color-surface-hover: #f8fafc;
-  
+
   /* Text - High contrast for readability (WCAG AA compliant) */
   --color-text: #0f172a;
   --color-text-secondary: #334155; /* Improved from #475569 for better contrast */
   --color-text-muted: #475569; /* Improved from #64748b */
   --color-text-placeholder: #64748b; /* Improved from #94a3b8 */
-  
+
   /* Accent - Orange (subtle, not aggressive) */
   --color-accent: #ea580c;
   --color-accent-hover: #c2410c;
   --color-accent-light: #fff7ed;
   --color-accent-muted: #fed7aa;
-  
+
   /* Semantic */
   --color-success: #16a34a;
   --color-warning: #ca8a04;
   --color-error: #dc2626;
   --color-info: #2563eb;
-  
+
   /* Borders */
   --color-border: #e2e8f0;
   --color-border-subtle: #f1f5f9;
   --color-border-strong: #cbd5e1;
-  
+
   /* ========================================
      TYPOGRAPHY — Premium Readability
      ======================================== */
-  
+
   /* Font Family */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
   /* Font Sizes - Mobile First (generous) */
-  --text-xs: 0.8125rem;     /* 13px */
-  --text-sm: 0.875rem;      /* 14px */
-  --text-base: 1.0625rem;   /* 17px - reading comfort */
-  --text-lg: 1.125rem;      /* 18px */
-  --text-xl: 1.25rem;       /* 20px */
-  --text-2xl: 1.5rem;       /* 24px */
-  --text-3xl: 1.875rem;     /* 30px */
-  --text-4xl: 2.25rem;      /* 36px */
-  --text-5xl: 3rem;         /* 48px */
-  
+  --text-xs: 0.8125rem; /* 13px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1.0625rem; /* 17px - reading comfort */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+
   /* Line Heights - Comfortable reading */
   --leading-tight: 1.25;
   --leading-snug: 1.375;
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
   --leading-loose: 1.875;
-  
+
   /* Font Weights */
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
-  
+
   /* Letter Spacing */
   --tracking-tight: -0.025em;
   --tracking-normal: 0;
   --tracking-wide: 0.025em;
-  
+
   /* ========================================
      SPACING — Consistent Rhythm
      ======================================== */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
-  
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+
   /* ========================================
      LAYOUT
      ======================================== */
   --max-width: 1200px;
-  --content-width: 42rem;     /* ~672px - optimal reading */
+  --content-width: 42rem; /* ~672px - optimal reading */
   --header-height: 64px;
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -103,13 +104,17 @@
   --radius-xl: 12px;
   --radius-2xl: 16px;
   --radius-full: 9999px;
-  
-  /* Shadows - Subtle depth */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  
+
+  /* Shadows - Enhanced depth V2 */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07),
+    0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 20px -4px rgba(0, 0, 0, 0.08),
+    0 4px 8px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 16px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
+
   /* Transitions */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -122,7 +127,9 @@
    RESET & BASE
    ======================================== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -147,7 +154,12 @@ body {
    TYPOGRAPHY
    ======================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
@@ -191,7 +203,8 @@ strong {
   color: var(--color-text);
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: var(--space-6);
   margin-bottom: var(--space-4);
 }
@@ -342,18 +355,64 @@ pre code {
 }
 
 /* ========================================
-   HERO
+   HERO V2 — Premium Reference Look
    ======================================== */
 
 .hero {
-  padding: var(--space-20) 0;
+  padding: var(--space-24) 0 var(--space-16);
   text-align: center;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg) 0%,
+    var(--color-bg-subtle) 100%
+  );
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-border),
+    transparent
+  );
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent-muted);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
 }
 
 .hero h1 {
   font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
   max-width: 800px;
   margin: 0 auto var(--space-6);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-lead {
+  font-size: var(--text-xl);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
 }
 
 .hero p {
@@ -363,23 +422,23 @@ pre code {
 }
 
 /* ========================================
-   ARTICLE CARDS
+   ARTICLE CARDS V2
    ======================================== */
 
 .article-card {
   display: block;
-  padding: var(--space-6);
+  padding: var(--space-8);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
   transition: all var(--duration-normal) var(--ease-out);
 }
 
 .article-card:hover {
-  border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
 .article-card h3 {
@@ -833,11 +892,25 @@ pre code {
 }
 
 /* ========================================
-   SECTION HEADERS
+   SECTIONS V2 — Generous Spacing
    ======================================== */
 
+.section {
+  padding: var(--space-20) 0;
+}
+
+.section-alt {
+  background: var(--color-bg-subtle);
+}
+
 .section-header {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-12);
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
 }
 
 .section-header h1 {
@@ -847,7 +920,8 @@ pre code {
 .section-header p {
   font-size: var(--text-lg);
   color: var(--color-text-secondary);
-  max-width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* ========================================
@@ -856,14 +930,14 @@ pre code {
 
 @media (min-width: 768px) {
   :root {
-    --text-base: 1.125rem;   /* 18px on desktop */
-    --text-lg: 1.1875rem;    /* 19px */
+    --text-base: 1.125rem; /* 18px on desktop */
+    --text-lg: 1.1875rem; /* 19px */
   }
-  
+
   h1 {
     font-size: var(--text-5xl);
   }
-  
+
   .article-content {
     font-size: var(--text-lg);
   }
@@ -873,23 +947,23 @@ pre code {
   .nav {
     gap: var(--space-4);
   }
-  
+
   .nav a {
     font-size: var(--text-xs);
   }
-  
+
   .hero h1 {
     font-size: var(--text-3xl);
   }
-  
+
   .guide-title {
     font-size: var(--text-3xl);
   }
-  
+
   .chapter-nav-links {
     flex-direction: column;
   }
-  
+
   .chapter-nav-btn {
     max-width: 100%;
   }
@@ -907,36 +981,46 @@ pre code {
   text-align: center;
 }
 
-.mt-4 { margin-top: var(--space-4); }
-.mt-8 { margin-top: var(--space-8); }
-.mt-12 { margin-top: var(--space-12); }
-.mb-4 { margin-bottom: var(--space-4); }
-.mb-8 { margin-bottom: var(--space-8); }
+.mt-4 {
+  margin-top: var(--space-4);
+}
+.mt-8 {
+  margin-top: var(--space-8);
+}
+.mt-12 {
+  margin-top: var(--space-12);
+}
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
 
 /* ========================================
-   CATEGORY CARDS
+   CATEGORY CARDS V2
    ======================================== */
 
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-6);
+  gap: var(--space-8);
 }
 
 .category-card {
   display: block;
-  padding: var(--space-6);
+  padding: var(--space-8);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
   transition: all var(--duration-normal) var(--ease-out);
   text-decoration: none;
 }
 
 .category-card:hover {
   border-color: var(--color-accent);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-card-hover);
   transform: translateY(-4px);
 }
 
@@ -1288,5 +1372,3 @@ textarea {
   font-size: var(--text-lg);
   margin-bottom: var(--space-4);
 }
-
-
