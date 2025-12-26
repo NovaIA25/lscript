@@ -1,0 +1,16 @@
+# robots.txt pour lscript.fr
+# Permet à tous les robots d'indexer le site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lscript.fr/sitemap.xml
+
+# Désactiver l'indexation des API routes et fichiers système
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Rate limiting suggéré pour éviter la surcharge
+Crawl-delay: 1
