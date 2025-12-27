@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ArticleCard from '@/components/ArticleCard';
 import BeginnerCallout from '@/components/BeginnerCallout';
 
@@ -78,40 +79,87 @@ export default function BlogClient({ articles, searchParams }: BlogClientProps) 
   }, [articles, selectedCategory, searchQuery, selectedTag]);
 
   return (
-    <div className="page-content" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-24)' }}>
+    <div className="page-content" style={{
+      paddingTop: 'var(--space-20)',
+      paddingBottom: 'var(--space-24)',
+      background: 'var(--color-gradient-subtle)',
+      minHeight: '100vh'
+    }}>
       <div className="container" style={{ maxWidth: '1200px' }}>
         {/* Premium Header */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: 'var(--space-20)',
-          padding: '0 var(--space-6)'
-        }}>
-          <span className="article-category-badge" style={{ marginBottom: 'var(--space-8)' }}>
+        <motion.div
+          style={{
+            textAlign: 'center',
+            marginBottom: 'var(--space-20)',
+            padding: '0 var(--space-6)'
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.span
+            className="article-category-badge"
+            style={{
+              marginBottom: 'var(--space-8)',
+              background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
+              color: 'white',
+              padding: 'var(--space-2) var(--space-6)',
+              boxShadow: '0 4px 20px rgba(249, 115, 22, 0.3)',
+              display: 'inline-block'
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             ✍️ Articles & Tutoriels
-          </span>
-          <h1 style={{
-            fontSize: 'var(--text-5xl)',
-            marginBottom: 'var(--space-8)',
-            letterSpacing: 'var(--tracking-tight)'
-          }}>
+          </motion.span>
+
+          <motion.h1
+            style={{
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              marginBottom: 'var(--space-8)',
+              letterSpacing: 'var(--tracking-tight)',
+              background: 'linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontWeight: 'var(--weight-extrabold)'
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             Tous les articles
-          </h1>
+          </motion.h1>
 
-          <div className="section-separator" />
+          <div className="section-separator" style={{
+            background: 'linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%)',
+            height: '2px'
+          }} />
 
-          <p style={{
-            fontSize: 'var(--text-xl)',
-            color: 'var(--color-text-secondary)',
-            lineHeight: '1.8',
-            maxWidth: '700px',
-            margin: '0 auto var(--space-12)'
-          }}>
+          <motion.p
+            style={{
+              fontSize: 'var(--text-xl)',
+              color: 'var(--color-text-secondary)',
+              lineHeight: '1.8',
+              maxWidth: '700px',
+              margin: '0 auto var(--space-12)'
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             Des explications simples pour comprendre le développement web et mobile.
-            Un article = une question, une réponse claire.
-          </p>
-        </div>
+            Un article = une question, une réponse <strong style={{ color: 'var(--color-accent)' }}>claire</strong>.
+          </motion.p>
+        </motion.div>
 
-        <BeginnerCallout />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          <BeginnerCallout />
+        </motion.div>
 
         {/* Active Tag Filter Badge */}
         {selectedTag && (
@@ -159,53 +207,66 @@ export default function BlogClient({ articles, searchParams }: BlogClientProps) 
         )}
 
         {/* Premium Search Bar */}
-        <div style={{
-          marginBottom: 'var(--space-10)',
-          maxWidth: '600px',
-          margin: '0 auto var(--space-10)'
-        }}>
+        <motion.div
+          style={{
+            marginBottom: 'var(--space-10)',
+            maxWidth: '600px',
+            margin: '0 auto var(--space-10)'
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
           <div style={{
             position: 'relative',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)',
-            borderRadius: 'var(--radius-xl)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+            borderRadius: 'var(--radius-2xl)',
             overflow: 'hidden'
           }}>
-            <input
+            <motion.input
               type="text"
               placeholder="🔍 Rechercher un article..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
                 width: '100%',
-                padding: 'var(--space-4) var(--space-6)',
+                padding: 'var(--space-5) var(--space-6)',
                 fontSize: 'var(--text-lg)',
                 border: '2px solid var(--color-border)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
+                borderRadius: 'var(--radius-2xl)',
+                transition: 'all 0.3s ease',
                 background: 'var(--color-surface)',
-                outline: 'none'
+                outline: 'none',
+                color: 'var(--color-text)',
+                fontWeight: 'var(--weight-medium)'
               }}
               onFocus={(e) => {
                 e.target.style.borderColor = 'var(--color-accent)';
-                e.target.style.boxShadow = '0 0 0 4px rgba(234, 88, 12, 0.1)';
+                e.target.style.boxShadow = '0 0 0 4px rgba(249, 115, 22, 0.15), 0 8px 32px rgba(249, 115, 22, 0.2)';
               }}
               onBlur={(e) => {
                 e.target.style.borderColor = 'var(--color-border)';
                 e.target.style.boxShadow = 'none';
               }}
+              whileFocus={{ scale: 1.02 }}
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Premium Category Filters */}
-        <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: 'var(--space-3)',
-          marginBottom: 'var(--space-16)',
-        }}>
-          {CATEGORIES.map(category => {
+        <motion.div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 'var(--space-3)',
+            marginBottom: 'var(--space-16)',
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+        >
+          {CATEGORIES.map((category, index) => {
             const count = categoryCounts[category.id] || 0;
             const isActive = selectedCategory === category.id;
 
@@ -213,45 +274,42 @@ export default function BlogClient({ articles, searchParams }: BlogClientProps) 
             if (count === 0 && category.id !== 'all') return null;
 
             return (
-              <button
+              <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 style={{
                   padding: 'var(--space-3) var(--space-5)',
                   fontSize: 'var(--text-sm)',
-                  fontWeight: isActive ? 'var(--weight-semibold)' : 'var(--weight-medium)',
+                  fontWeight: isActive ? 'var(--weight-bold)' : 'var(--weight-medium)',
                   color: isActive ? 'white' : 'var(--color-text)',
                   background: isActive
-                    ? 'var(--color-accent)'
+                    ? 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)'
                     : 'var(--color-surface)',
                   border: `2px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border)'}`,
                   borderRadius: 'var(--radius-full)',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 0.3s ease',
                   boxShadow: isActive
-                    ? '0 2px 8px rgba(234, 88, 12, 0.2)'
-                    : '0 1px 3px rgba(0,0,0,0.04)',
+                    ? '0 4px 16px rgba(249, 115, 22, 0.3)'
+                    : '0 2px 8px rgba(0,0,0,0.06)',
                 }}
-                onMouseEnter={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.borderColor = 'var(--color-accent)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-                  }
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 + index * 0.05, duration: 0.3 }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -2,
+                  boxShadow: isActive
+                    ? '0 6px 20px rgba(249, 115, 22, 0.4)'
+                    : '0 4px 16px rgba(0,0,0,0.12)'
                 }}
-                onMouseLeave={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.borderColor = 'var(--color-border)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
-                  }
-                }}
+                whileTap={{ scale: 0.95 }}
               >
                 {category.icon} {category.label} {count > 0 && `(${count})`}
-              </button>
+              </motion.button>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Résultats */}
         <div style={{ marginBottom: 'var(--space-4)' }}>
@@ -273,47 +331,82 @@ export default function BlogClient({ articles, searchParams }: BlogClientProps) 
         </div>
 
         {/* Grille d'articles */}
-        {filteredArticles.length === 0 ? (
-          <div className="card" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
-            <p style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>
-              {searchQuery ? '🔍 Aucun résultat trouvé' : '📝 Aucun article dans cette catégorie'}
-            </p>
-            <p style={{ color: 'var(--color-text-muted)' }}>
-              {searchQuery
-                ? 'Essaie avec d\'autres mots-clés ou explore toutes les catégories.'
-                : 'Explore les autres catégories pour découvrir plus d\'articles.'
-              }
-            </p>
-            {(searchQuery || selectedCategory !== 'all' || selectedTag) && (
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedCategory('all');
-                  setSelectedTag(null);
-                }}
-                style={{
-                  marginTop: 'var(--space-4)',
-                  padding: 'var(--space-3) var(--space-6)',
-                  background: 'var(--color-primary)',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: 'var(--radius-md)',
-                  cursor: 'pointer',
-                  fontSize: 'var(--text-base)',
-                  fontWeight: '500',
-                }}
-              >
-                Voir tous les articles
-              </button>
-            )}
-          </div>
-        ) : (
-          <div className="articles-grid">
-            {filteredArticles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
-            ))}
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          {filteredArticles.length === 0 ? (
+            <motion.div
+              key="no-results"
+              className="card"
+              style={{
+                textAlign: 'center',
+                padding: '4rem 2rem',
+                background: 'var(--color-surface)',
+                borderRadius: 'var(--radius-2xl)',
+                border: '1px solid var(--color-border)',
+                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>
+                {searchQuery ? '🔍 Aucun résultat trouvé' : '📝 Aucun article dans cette catégorie'}
+              </p>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-lg)' }}>
+                {searchQuery
+                  ? 'Essaie avec d\'autres mots-clés ou explore toutes les catégories.'
+                  : 'Explore les autres catégories pour découvrir plus d\'articles.'
+                }
+              </p>
+              {(searchQuery || selectedCategory !== 'all' || selectedTag) && (
+                <motion.button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSelectedCategory('all');
+                    setSelectedTag(null);
+                  }}
+                  style={{
+                    marginTop: 'var(--space-6)',
+                    padding: 'var(--space-4) var(--space-8)',
+                    background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: 'var(--radius-lg)',
+                    cursor: 'pointer',
+                    fontSize: 'var(--text-base)',
+                    fontWeight: 'var(--weight-bold)',
+                    boxShadow: '0 4px 16px rgba(249, 115, 22, 0.3)'
+                  }}
+                  whileHover={{ scale: 1.05, boxShadow: '0 6px 24px rgba(249, 115, 22, 0.4)' }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Voir tous les articles
+                </motion.button>
+              )}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="results-grid"
+              className="articles-grid"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {filteredArticles.map((article, index) => (
+                <motion.div
+                  key={article.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ delay: index * 0.05, duration: 0.4 }}
+                >
+                  <ArticleCard article={article} />
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

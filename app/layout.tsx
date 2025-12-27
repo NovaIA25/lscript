@@ -1,12 +1,10 @@
 import '@/styles/globals.css';
-import ThemeScript from '@/components/ThemeScript';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import StructuredData, { createWebsiteSchema } from '@/components/StructuredData';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -67,7 +65,6 @@ export default function RootLayout({
 
   return (
     <html lang="fr">
-        <ThemeScript />
       <head>
         {/* Google Tag Manager */}
         <Script
@@ -107,16 +104,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <ThemeProvider>
-          <Header />
-          <main id="main-content" role="main">
-            {children}
-          </main>
-          <Footer />
-          <CookieConsent />
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
+        <Header />
+        <main id="main-content" role="main">
+          {children}
+        </main>
+        <Footer />
+        <CookieConsent />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
